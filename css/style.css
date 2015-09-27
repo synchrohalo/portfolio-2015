@@ -1,0 +1,193 @@
+/********** MAIN **********/
+
+body{
+	margin:0 auto;
+	margin-top:1em;
+	color:#929292;
+	font-family:"Quicksand",sans-serif;
+	width:100%;
+}
+
+a{
+	color:#555;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+img{
+	margin:0 auto;
+	max-width:100%;
+}
+
+#main {
+	text-align:center;
+	margin-top:5%;
+}
+
+#nav{
+	list-style-type:none;
+	text-transform:uppercase;
+	margin-top:2em;
+	letter-spacing:0.1em;
+	font-weight:bold;
+	font-size:0.9em;
+}
+
+#nav li{
+	display:inline;
+	margin-left:1em;
+	margin-right:1em;
+}
+
+.line-break{
+	margin-top:-0.5em;
+	border-bottom:1px solid #929292;
+	margin-bottom:1em;
+}
+
+.vertical{
+	position:relative;
+	top:50%;
+	transform:translateY(-50%);
+}
+
+/********** WORKS **********/
+
+#works{
+	text-align:center;
+	
+}
+
+#projects-list{
+	text-align:center;
+	list-style-type:none;
+	margin-top:2em;
+}
+
+#projects-list li{
+	display:inline-block;
+	background-color:#555;
+	color:#fff;
+	height:16em;
+	width:16em;
+	border-radius:100%;
+	margin:1em;
+	padding:0;
+}
+
+#projects-list li:hover{
+	background-color:#999;
+}
+
+/********** PROJECT DETAILS **********/
+
+.banner{
+	display:none;
+	height:30em;
+	width:100vw;
+	background-attachment:fixed;
+	margin-bottom:1em;
+}
+
+#DT-banner{
+	background-image:url("../images/design-thinking/collage.jpg");
+}
+
+#TY-banner{
+	background-image:url("../images/business-travel/collage.jpg");
+}
+
+#MB-banner{
+	background-image:url("../images/food-delivery/collage.jpg");
+}
+
+.project-details{
+	display:none;
+	margin-top:2em;
+}
+
+.text-body{
+	margin:0 auto;
+	width:50em;
+	margin-bottom:3em;
+}
+
+.text-body a{
+	color:#46cfd1;
+}
+
+.page-title{
+	font-family:'Slabo 27px',serif;
+	text-align:center;
+	text-transform:uppercase;
+	color:#626262;
+	letter-spacing:0.1em;
+}
+
+.header{
+	text-align:center;
+	margin-top:-1em;
+}
+
+.back{
+	position:fixed;
+	bottom:5vh;
+	left:90vw;
+	font-weight:bold;
+}
+
+.project-img{
+	margin:0 auto;
+	width:90%;
+	text-align:center;
+}
+
+.mobile-img {
+	max-width:20em;
+	margin:1em;
+}
+
+.small-mobile-img{
+	max-width:17em;
+	margin:0.3em;
+}
+
+.indented{
+	margin-left:2em;
+}
+
+.uppercase{
+	text-transform:uppercase;
+}
+
+.small-label{
+	letter-spacing:0.05em;
+	color:#626262;
+}
+
+.small-description{
+	margin-top:-1.75em;
+}
+
+.sub-title{
+	margin-top:2em;
+	margin-bottom:0em;
+}
+
+.caption{
+	margin:0 auto;
+	margin-bottom:3em;
+	margin-top:0em;
+	width:80%;
+}
+
+.caption p{
+	font-size:0.95em;
+	line-height:1.5em;
+}
+
+/********** ABOUT **********/
+
+#about{
+	margin-top:2em;
+}
