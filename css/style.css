@@ -31,6 +31,7 @@ img{
 	letter-spacing:0.1em;
 	font-weight:bold;
 	font-size:0.9em;
+	margin-bottom:5em;
 }
 
 #nav li{
@@ -77,6 +78,49 @@ img{
 
 #projects-list li:hover{
 	background-color:#999;
+}
+
+#misc .page-title{
+	margin-top:1.75em;
+}
+
+.thumbnail{
+	background-size:cover;
+	-webkit-filter:grayscale(100%);
+	filter:grayscale(100%);
+}
+
+.thumbnail:hover{
+	-webkit-filter:grayscale(0%);
+	filter:grayscale(0%);
+}
+
+#DT-thumb{
+	background-image:url("../images/thumbnails/thumb-DT.png");
+}
+
+#TY-thumb{
+	background-image:url("../images/thumbnails/thumb-TY.png");
+}
+
+#MB-thumb{
+	background-image:url("../images/thumbnails/thumb-MB.png");
+}
+
+#card-thumb{
+	background-image:url("../images/thumbnails/thumb-card.png");
+}
+
+#lich-thumb{
+	background-image:url("../images/thumbnails/thumb-lich.png");
+}
+
+#book-girl-thumb{
+	background-image:url("../images/thumbnails/thumb-book-girl.png");
+}
+
+#scarf-thumb{
+	background-image:url("../images/thumbnails/thumb-scarf.png");
 }
 
 /********** PROJECT DETAILS **********/
