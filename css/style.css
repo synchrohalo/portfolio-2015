@@ -15,6 +15,10 @@ a{
 	font-weight:bold;
 }
 
+a:hover{
+	color:#c6839a;
+}
+
 #self-portrait{
 	max-width:22em;
 }
@@ -92,7 +96,7 @@ h6{
 #projects-list li{
 	display:inline-block;
 	background-color:#fff;
-	color:#626262;
+	color:#fff;
 	height:14em;
 	width:14em;
 	border-radius:100%;
@@ -118,11 +122,12 @@ h6{
 	visibility:hidden;
 	position:relative;
 	top:0em;
-	background-color:#fff;
+	background-color:#c6839a;
 	font-size:0.9em;
 	opacity:0.8;
 	height:100%;
 	width:100%;
+	border-radius:100%;
 	padding:0;
 	z-index:3;
 }
@@ -190,7 +195,11 @@ h6{
 }
 
 .text-body a{
-	color:#46cfd1;
+	color:#c6839a;
+}
+
+.text-body a:hover{
+	color:#626262;
 }
 
 .header{
