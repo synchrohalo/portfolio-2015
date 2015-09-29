@@ -110,8 +110,8 @@ h6{
 
 .thumbnail{
 	background-size:cover;
-	-webkit-filter:grayscale(100%);
-	filter:grayscale(100%);
+	/*-webkit-filter:grayscale(100%);
+	filter:grayscale(100%);*/
 }
 
 .thumb-overlay{
@@ -128,31 +128,31 @@ h6{
 }
 
 #DT-thumb{
-	background-image:url("../images/thumbnails/thumb-DT.png");
+	background-image:url("../images/thumbnails/greyscale/thumb-DT.png");
 }
 
 #TY-thumb{
-	background-image:url("../images/thumbnails/thumb-TY.png");
+	background-image:url("../images/thumbnails/greyscale/thumb-TY.png");
 }
 
 #MB-thumb{
-	background-image:url("../images/thumbnails/thumb-MB.png");
+	background-image:url("../images/thumbnails/greyscale/thumb-MB.png");
 }
 
 #card-thumb{
-	background-image:url("../images/thumbnails/thumb-card.png");
+	background-image:url("../images/thumbnails/greyscale/thumb-card.png");
 }
 
 #lich-thumb{
-	background-image:url("../images/thumbnails/thumb-lich.png");
+	background-image:url("../images/thumbnails/greyscale/thumb-lich.png");
 }
 
 #book-girl-thumb{
-	background-image:url("../images/thumbnails/thumb-book-girl.png");
+	background-image:url("../images/thumbnails/greyscale/thumb-book-girl.png");
 }
 
 #scarf-thumb{
-	background-image:url("../images/thumbnails/thumb-scarf.png");
+	background-image:url("../images/thumbnails/greyscale/thumb-scarf.png");
 }
 
 /********** PROJECT DETAILS **********/
