@@ -164,9 +164,10 @@ h6{
 
 .banner{
 	display:none;
-	height:20em;
+	height:22em;
 	width:100vw;
 	background-attachment:fixed;
+	background-size:cover;
 	margin-bottom:1em;
 }
 
