@@ -124,7 +124,7 @@ h6{
 	top:0em;
 	background-color:#c6839a;
 	font-size:0.9em;
-	opacity:0.8;
+	opacity:0.9;
 	height:100%;
 	width:100%;
 	border-radius:100%;
@@ -267,4 +267,32 @@ h6{
 .caption p{
 	font-size:0.95em;
 	line-height:1.5em;
+}
+
+#img-viewer{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	height:100vh;
+	width:100vw;
+}
+
+.lightbox-overlay{
+	position:fixed;
+	top:0;
+	left:0;
+	height:100vh;
+	width:100vw;
+	background-color:#000;
+	opacity:0.8;
+}
+
+.lightbox-img{
+	z-index:6;
+	position:fixed;
+	top:25%;
+	left:40%;
+	width:22em;
 }
