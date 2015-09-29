@@ -78,7 +78,7 @@ img{
 #projects-list li{
 	display:inline-block;
 	background-color:#555;
-	color:#fff;
+	color:#626262;
 	height:14em;
 	width:14em;
 	border-radius:100%;
@@ -100,9 +100,17 @@ img{
 	filter:grayscale(100%);
 }
 
-.thumbnail:hover{
-	-webkit-filter:grayscale(0%);
-	filter:grayscale(0%);
+.thumb-overlay{
+	visibility:hidden;
+	position:relative;
+	top:0em;
+	background-color:#fff;
+	font-size:0.9em;
+	opacity:0.8;
+	height:100%;
+	width:100%;
+	padding:0;
+	z-index:3;
 }
 
 #DT-thumb{

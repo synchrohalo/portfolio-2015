@@ -3,51 +3,80 @@ function show(id,dispType){
 }
 
 function hide(id){
-	document.getElementById(id).style.display = 'none';
+	document.getElementById(id).style.display = "none";
 }
 
 function changeTitle(title){
 	document.title = title;
 }
 
+function thumbnailHover(id,isHover){
+	if(isHover){ document.getElementById(id).style.visibility = "visible"; }
+	else { document.getElementById(id).style.visibility = "hidden"; }
+}
+
 /********** PROJECTS **********/
-document.getElementById("DT-thumb").onclick=function(){
+var dtThumb = document.getElementById("DT-thumb");
+var dtBack = document.getElementById("DT-back");
+var tyThumb = document.getElementById("TY-thumb");
+var tyBack = document.getElementById("TY-back");
+var mbThumb = document.getElementById("MB-thumb");
+var mbBack = document.getElementById("MB-back");
+
+
+dtThumb.onclick=function(){
 	show("DT-details","block");
 	show("DT-banner","block");
 	hide("projects");
 	changeTitle("Design Thinking Mobile App | Joanne Arboleda");
 };
 
-document.getElementById("TY-thumb").onclick=function(){
+dtThumb.onmouseenter=function(){
+	thumbnailHover("DT-overlay", true);
+};
+
+dtThumb.onmouseleave=function(){
+	thumbnailHover("DT-overlay", false);
+};
+
+tyThumb.onclick=function(){
 	show("TY-details","block");
 	show("TY-banner","block");
 	hide("projects");
 	changeTitle("Business Travel Mobile App | Joanne Arboleda");
 };
 
-document.getElementById("MB-thumb").onclick=function(){
-	show("MB-details","block");
-	show("MB-banner","block");
-	hide("projects");
-	changeTitle("Food Delivery Webpage | Joanne Arboleda");
+tyThumb.onmouseenter=function(){
+	thumbnailHover("TY-overlay", true);
 };
 
-
-document.getElementById("DT-back").onclick=function(){
-	show("projects","block");
-	hide("DT-banner");
-	hide("DT-details");
-	changeTitle("Works | Joanne Arboleda");
+tyThumb.onmouseleave=function(){
+	thumbnailHover("TY-overlay", false);
 };
 
-document.getElementById("TY-back").onclick=function(){
+tyBack.onclick=function(){
 	show("projects","block");
 	hide("TY-banner");
 	hide("TY-details");
 	changeTitle("Works | Joanne Arboleda");
 };
 
-document.getElementById("MB-back").onclick=function(){
+mbThumb.onclick=function(){
+	show("MB-details","block");
+	show("MB-banner","block");
+	hide("projects");
+	changeTitle("Food Delivery Webpage | Joanne Arboleda");
+};
+
+mbThumb.onmouseenter=function(){
+	thumbnailHover("MB-overlay", true);
+};
+
+mbThumb.onmouseleave=function(){
+	thumbnailHover("MB-overlay", false);
+};
+
+mbBack.onclick=function(){
 	show("projects","block");
 	hide("MB-banner");
 	hide("MB-details");
