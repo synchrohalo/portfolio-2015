@@ -39,6 +39,13 @@ dtThumb.onmouseleave=function(){
 	thumbnailHover("DT-overlay", false);
 };
 
+dtBack.onclick=function(){
+	show("projects","block");
+	hide("DT-banner");
+	hide("DT-details");
+	changeTitle("Works | Joanne Arboleda");
+};
+
 tyThumb.onclick=function(){
 	show("TY-details","block");
 	show("TY-banner","block");
