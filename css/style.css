@@ -44,7 +44,7 @@ img{
 	list-style-type:none;
 	text-transform:uppercase;
 	margin-top:2em;
-	letter-spacing:0.1em;
+	letter-spacing:0.05em;
 	font-weight:bold;
 	font-size:0.9em;
 	margin-bottom:3.5em;
@@ -73,7 +73,7 @@ img{
 	text-align:center;
 	text-transform:uppercase;
 	color:#626262;
-	letter-spacing:0.1em;
+	letter-spacing:0.05em;
 }
 
 h6{
@@ -267,10 +267,4 @@ h6{
 .caption p{
 	font-size:0.95em;
 	line-height:1.5em;
-}
-
-/********** ABOUT **********/
-
-#about{
-	margin-top:2em;
 }
