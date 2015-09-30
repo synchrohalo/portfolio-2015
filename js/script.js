@@ -15,8 +15,12 @@ $( document ).ready(function() {
 	}
 
 	function thumbnailHover(id,isHover){
-		if(isHover){ document.getElementById(id).style.visibility = "visible"; }
-		else { document.getElementById(id).style.visibility = "hidden"; }
+		if(isHover){ //document.getElementById(id).style.visibility = "visible"; 
+			$( "#" + id ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
+		}
+		else { 
+			$( "#" + id ).css( "visibility", "hidden" );
+		}
 	}
 
 	var dtThumb = document.getElementById("DT-thumb");
@@ -97,6 +101,8 @@ $( document ).ready(function() {
 		changeTitle("Works | Joanne Arboleda");
 	};
 	
+	var isViewingImg = false;
+	
 	cardThumb.onmouseenter=function(){
 		thumbnailHover("card-overlay", true);
 	};
@@ -106,13 +112,36 @@ $( document ).ready(function() {
 	};
 	
 	// Show Illustration 
-	cardThumb.onclick=function(){
-		$( "#img-viewer" ).fadeIn( "fast" );
+	
+	function showImg( img, descId ){
+		if( !isViewingImg ){
+			$( descId ).show();
+			$( "#current-img" ).attr( "src", img )
+			$( "#img-slider" ).show();
+			$( "body" ).height( $( "body" ).height() + 475 );
+			$( ".img-container" ).slideToggle( "slow" );
+			$("html, body").animate({ scrollTop: $(document).height() }, "fast");
+			
+			isViewingImg = true;
+		}
 	}
 	
-	$( "#img-viewer" ).click(function(){
-		$( this ).fadeOut( "fast" );
+	$( "#img-slider" ).click(function(){
+		$( this ).hide();
+		$( ".img-desc" ).hide();
+		$( "body" ).height( $( "body" ).height() - 475 );
+		$( ".img-container" ).slideToggle( "slow" );
+		isViewingImg = false;
 	});
+	
+	cardThumb.onclick=function(){
+		//$( "#img-viewer" ).fadeIn( "fast" );
+		showImg( "../images/illustrations/card.png", "#card-desc" );
+	};
+	
+	/*$( "#img-viewer" ).click(function(){
+		$( this ).fadeOut( "fast" );
+	});*/
 	
 	lichThumb.onmouseenter=function(){
 		thumbnailHover("lich-overlay", true);
@@ -120,6 +149,13 @@ $( document ).ready(function() {
 
 	lichThumb.onmouseleave=function(){
 		thumbnailHover("lich-overlay", false);
+	};
+	
+	// Show Illustration 
+	lichThumb.onclick=function(){
+		//$( "#current-img" ).attr( "src", "../images/illustrations/lich.png" )
+		//$( "#img-viewer" ).fadeIn( "fast" );
+		showImg( "../images/illustrations/lich.png", "#lich-desc" );
 	};
 	
 	bookGirlThumb.onmouseenter=function(){
@@ -130,11 +166,25 @@ $( document ).ready(function() {
 		thumbnailHover("book-girl-overlay", false);
 	};
 	
+	// Show Illustration 
+	bookGirlThumb.onclick=function(){
+		//$( "#current-img" ).attr( "src", "../images/illustrations/book-girl.png" )
+		//$( "#img-viewer" ).fadeIn( "fast" );
+		showImg( "../images/illustrations/book-girl.png", "#book-girl-desc" );
+	};
+	
 	scarfThumb.onmouseenter=function(){
 		thumbnailHover("scarf-overlay", true);
 	};
 
 	scarfThumb.onmouseleave=function(){
 		thumbnailHover("scarf-overlay", false);
+	};
+	
+	// Show Illustration 
+	scarfThumb.onclick=function(){
+		//$( "#current-img" ).attr( "src", "../images/illustrations/scarf.png" )
+		//$( "#img-viewer" ).fadeIn( "fast" );
+		showImg( "../images/illustrations/scarf-copy.png", "#scarf-desc" );
 	};
 });
