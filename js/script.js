@@ -15,7 +15,7 @@ $( document ).ready(function() {
 	}
 
 	function thumbnailHover(id,isHover){
-		if(isHover){ //document.getElementById(id).style.visibility = "visible"; 
+		if( isHover ){ //document.getElementById(id).style.visibility = "visible"; 
 			$( "#" + id ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
 		}
 		else { 
@@ -101,17 +101,9 @@ $( document ).ready(function() {
 		changeTitle("Works | Joanne Arboleda");
 	};
 	
-	var isViewingImg = false;
-	
-	cardThumb.onmouseenter=function(){
-		thumbnailHover("card-overlay", true);
-	};
-
-	cardThumb.onmouseleave=function(){
-		thumbnailHover("card-overlay", false);
-	};
-	
 	// Show Illustration 
+	
+	var isViewingImg = false;
 	
 	function showImg( img, descId ){
 		if( !isViewingImg ){
@@ -128,15 +120,41 @@ $( document ).ready(function() {
 	
 	$( "#img-slider" ).click(function(){
 		$( this ).hide();
+		$( ".thumb-overlay" ).css( "visibility", "hidden" );
 		$( ".img-desc" ).hide();
 		$( "body" ).height( $( "body" ).height() - 475 );
 		$( ".img-container" ).slideToggle( "slow" );
 		isViewingImg = false;
 	});
 	
+	$( "#card-thumb" )
+		.mouseenter(function(){
+			thumbnailHover("card-overlay", true);
+		})
+		.mouseleave(function(){
+			thumbnailHover("card-overlay", false);
+		});
+	
+	/*cardThumb.onmouseenter=function(){
+		thumbnailHover("card-overlay", true);
+	};
+
+	cardThumb.onmouseleave=function(){
+		thumbnailHover("card-overlay", false);
+	};*/
+	
 	cardThumb.onclick=function(){
 		//$( "#img-viewer" ).fadeIn( "fast" );
+		$( "#card-overlay" ).css( "visibility", "visible" );
+		//$( "#prev-img" ).css( "visibility", "hidden" );
 		showImg( "../images/illustrations/card.png", "#card-desc" );
+	
+		/*$( "#next-img" ).click(function() {
+			$( "#card-desc" ).hide();
+			$( "#lich-desc" ).show();
+			$( "#current-img" ).attr( "src", "../images/illustrations/lich.png" )
+			$( "#prev-img" ).css( "visibility", "visible" );
+		});*/
 	};
 	
 	/*$( "#img-viewer" ).click(function(){
@@ -155,6 +173,8 @@ $( document ).ready(function() {
 	lichThumb.onclick=function(){
 		//$( "#current-img" ).attr( "src", "../images/illustrations/lich.png" )
 		//$( "#img-viewer" ).fadeIn( "fast" );
+		
+		$( "#lich-overlay" ).css( "visibility", "visible" );
 		showImg( "../images/illustrations/lich.png", "#lich-desc" );
 	};
 	
