@@ -23,105 +23,6 @@ $( document ).ready(function() {
 		}
 	}
 	
-	var galleryPic = function( title, idName ){
-		return {
-			title: this.title,
-			idName: this.idName,
-			getTitle: function(){
-				return title;
-			},
-			
-			getIdName: function(){
-				return idName;
-			},
-			
-			getSrc: function(){
-				return "../images/illustrations/" + this.getIdName() + ".png";
-			}, // get image URL
-			
-			preload: function(){
-				var img = new Image();
-				img.src = this.getSrc();
-			}, // preload image
-			
-			hoverToggle: function(){
-				var id = this.getIdName();
-				
-				$( "#" + id + "-thumb" )
-					.mouseenter(function(){ 
-						$( "#" + id + "-overlay" ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
-					})
-					.mouseleave(function(){
-						$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
-					});
-			}, // hovering over thumbnails
-			
-			display: function(){
-				var id = this.getIdName();
-				var src = this.getSrc();
-				
-				$( "#" + id + "-overlay" ).css( "visibility", "visible" );
-				$( "#" + id + "-desc" ).show();
-				$( "#current-img" ).attr( "src", src );
-			}, // display image in viewer
-			
-			hide: function(){
-				$( ".img-desc" ).hide();
-			}, // hide image
-			
-			showViewer: function(){
-				var obj = this;
-				var id = this.getIdName();
-				
-				//console.log( "i was called" );
-				
-				$( "#" + id + "-thumb" ).unbind( "click" ).click(function(){
-					obj.hide();
-					obj.display();
-					$( "#bg-overlay" ).show();
-					$( "body" ).height( $( "body" ).height() + 475 );
-					$( ".img-container" ).slideToggle( "slow" );
-					$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
-				});
-				
-				$( "#bg-overlay" ).unbind( "click" ).click(function(){
-						$( this ).hide();
-						$( "body" ).height( $( "body" ).height() - 475 );
-						$( ".img-container" ).slideToggle( "slow" );
-					});
-			}
-		}
-	};
-	
-	var gallery = function( ){
-		return{
-			imgList: [],
-			isViewing: false,
-			getList: function(){
-				return this.imgList;
-			},
-			addImg: function( pic ){
-				var list = this.getList();
-				list.push( pic );
-			},
-		}
-	};	
-	
-	// Initializing new gallery
-	imgGallery = new gallery();
-	
-	// Initializing gallery images
-	imgGallery.addImg( galleryPic( "<em>Legend of Zelda</em>-Inspired Card", "card" ) ); // Zelda card, 0
-	imgGallery.addImg( galleryPic( "<em>Adventure Time</em> Lich Poster", "lich" ) ); // Lich poster, 1
-	imgGallery.addImg( galleryPic( "Scarf Girl Illustration", "scarf" ) ); // Scarf girl illustration, 2
-	imgGallery.addImg( galleryPic( "Bookish Girl Illustration", "book-girl" ) ); // Bookish girl illustration, 3
-	
-	for( var i = 0; i < imgGallery.getList().length; i++ ){
-		imgGallery.getList()[i].preload();
-		imgGallery.getList()[i].hoverToggle();
-		imgGallery.getList()[i].showViewer();
-	}
-	
 	var dtThumb = document.getElementById("DT-thumb");
 	var dtBack = document.getElementById("DT-back");
 	var tyThumb = document.getElementById("TY-thumb");
@@ -196,110 +97,149 @@ $( document ).ready(function() {
 		changeTitle("Works | Joanne Arboleda");
 	};
 	
-	// Show Illustration 
-	
-	/*var isViewingImg = false;
-	
-	function showImg( img, descId ){
-		if( !isViewingImg ){
-			$( descId ).show();
-			$( "#current-img" ).attr( "src", img )
-			$( "#img-slider" ).show();
-			$( "body" ).height( $( "body" ).height() + 475 );
-			$( ".img-container" ).slideToggle( "slow" );
-			$("html, body").animate({ scrollTop: $(document).height() }, "fast");
+	/************** IMAGE GALLERY ***************/
+	var galleryPic = function( title, idName ){
+		return {
+			title: this.title, // image title
+			idName: this.idName, // id name
+			index: null, // index in gallery
 			
-			isViewingImg = true;
+			getTitle: function(){
+				return title;
+			}, // get title
+			
+			getIdName: function(){
+				return idName;
+			}, // get id name
+			
+			getSrc: function(){
+				return "../images/illustrations/" + this.getIdName() + ".png";
+			}, // get image URL
+			
+			getIndex: function(){
+				return index;
+			}, // get index
+			
+			setIndex: function( newIndex ){
+				index = newIndex;
+			}, // set index
+			
+			preload: function(){
+				var img = new Image();
+				img.src = this.getSrc();
+			}, // preload image
+			
+			hoverToggle: function(){
+				var id = this.getIdName();
+				
+				$( "#" + id + "-thumb" )
+					.mouseenter(function(){ 
+						$( "#" + id + "-overlay" ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
+					})
+					.mouseleave(function(){
+						$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
+					});
+			}, // hovering over thumbnails
+			
+			display: function( viewerOn, len ){
+				var id = this.getIdName();
+				var src = this.getSrc();
+				var index = this.getIndex();
+				
+				$( "#" + id + "-overlay" ).css( "visibility", "visible");
+				$( "#" + id + "-desc" ).show();
+				$( "#current-img" ).attr( "src", src );
+				
+				//console.log(index);
+				//console.log(len);
+				
+				if( index == 0 || index != len - 1 ){
+					$( "#next-arrow" ).show();
+				}
+				if( index != 0 || index == len - 1 ){
+					$( "#prev-arrow" ).show();
+				}
+				
+				// show viewer if not already on
+				if( !viewerOn ){
+					$( "#bg-overlay" ).show();
+					$( "body" ).height( $( "body" ).height() + 475 );
+					$( ".img-container" ).slideToggle( "slow" );
+					$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
+				}
+			}, // display image in viewer
+			
+			hide: function( viewerOn ){
+				var id = this.getIdName();
+				
+				$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
+				$( "#next-img" ).hide();
+				$( "#prev-img" ).hide();
+				$( "#bg-overlay" ).hide();
+				$( ".img-desc" ).hide();
+				
+				// hide viewer if not already off
+				if( viewerOn ){
+					$( "body" ).height( $( "body" ).height() - 475 );
+					$( ".img-container" ).slideToggle( "slow" );
+				}
+			}, // hide image
+			
+			viewerToggle: function( len ){
+				var obj = this;
+				var id = this.getIdName();
+				
+				$( "#" + id + "-thumb" ).unbind( "click" ).click(function(){
+					obj.display( false, len );
+				});
+				
+				$( "#bg-overlay" ).unbind( "click" ).click(function(){
+					obj.hide( true );
+				});
+				$( ".exit-viewer p" ).unbind( "click" ).click(function(){
+					obj.hide( true );
+				});
+			} // toggle image viewer
 		}
-	}
-	
-	$( "#img-slider" ).click(function(){
-		$( this ).hide();
-		$( ".thumb-overlay" ).css( "visibility", "hidden" );
-		$( ".img-desc" ).hide();
-		$( "body" ).height( $( "body" ).height() - 475 );
-		$( ".img-container" ).slideToggle( "slow" );
-		isViewingImg = false;
-	});
-	
-	$( "#card-thumb" )
-		.mouseenter(function(){
-			thumbnailHover("card-overlay", true);
-		})
-		.mouseleave(function(){
-			thumbnailHover("card-overlay", false);
-		});
-	
-	/*cardThumb.onmouseenter=function(){
-		thumbnailHover("card-overlay", true);
-	};
-
-	cardThumb.onmouseleave=function(){
-		thumbnailHover("card-overlay", false);
-	};*/
-	
-	/*cardThumb.onclick=function(){
-		//$( "#img-viewer" ).fadeIn( "fast" );
-		$( "#card-overlay" ).css( "visibility", "visible" );
-		//$( "#prev-img" ).css( "visibility", "hidden" );
-		showImg( "../images/illustrations/card.png", "#card-desc" );
-	
-		/*$( "#next-img" ).click(function() {
-			$( "#card-desc" ).hide();
-			$( "#lich-desc" ).show();
-			$( "#current-img" ).attr( "src", "../images/illustrations/lich.png" )
-			$( "#prev-img" ).css( "visibility", "visible" );
-		});*/
-	/*};
-	
-	$( "#img-viewer" ).click(function(){
-		$( this ).fadeOut( "fast" );
-	});*/
-	
-	/*lichThumb.onmouseenter=function(){
-		thumbnailHover("lich-overlay", true);
-	};
-
-	lichThumb.onmouseleave=function(){
-		thumbnailHover("lich-overlay", false);
 	};
 	
-	// Show Illustration 
-	lichThumb.onclick=function(){
-		//$( "#current-img" ).attr( "src", "../images/illustrations/lich.png" )
-		//$( "#img-viewer" ).fadeIn( "fast" );
-		
-		$( "#lich-overlay" ).css( "visibility", "visible" );
-		showImg( "../images/illustrations/lich.png", "#lich-desc" );
-	};
+	var gallery = function( ){
+		return{
+			imgList: [],
+			isViewing: false,
+			
+			getList: function(){
+				return this.imgList;
+			},
+			
+			addImg: function( pic ){
+				var list = this.getList();
+				list.push( pic );
+			},
+			
+			initialize: function(){
+				var obj = this;
+				var list = this.getList();
+				var len = list.length;
+				
+				for( var i = 0; i < len; i++ ){
+					list[i].preload();
+					list[i].setIndex( i );
+					list[i].hoverToggle();
+					list[i].viewerToggle( len );
+				}
+			}
+		}
+	};	
 	
-	bookGirlThumb.onmouseenter=function(){
-		thumbnailHover("book-girl-overlay", true);
-	};
-
-	bookGirlThumb.onmouseleave=function(){
-		thumbnailHover("book-girl-overlay", false);
-	};
+	// Initializing new gallery
+	imgGallery = new gallery();
 	
-	// Show Illustration 
-	bookGirlThumb.onclick=function(){
-		//$( "#current-img" ).attr( "src", "../images/illustrations/book-girl.png" )
-		//$( "#img-viewer" ).fadeIn( "fast" );
-		showImg( "../images/illustrations/book-girl.png", "#book-girl-desc" );
-	};
+	// Initializing gallery images
+	imgGallery.addImg( galleryPic( "<em>Legend of Zelda</em>-Inspired Card", "card" ) ); // Zelda card, 0
+	imgGallery.addImg( galleryPic( "<em>Adventure Time</em> Lich Poster", "lich" ) ); // Lich poster, 1
+	imgGallery.addImg( galleryPic( "Scarf Girl Illustration", "scarf" ) ); // Scarf girl illustration, 2
+	imgGallery.addImg( galleryPic( "Bookish Girl Illustration", "book-girl" ) ); // Bookish girl illustration, 3
 	
-	scarfThumb.onmouseenter=function(){
-		thumbnailHover("scarf-overlay", true);
-	};
-
-	scarfThumb.onmouseleave=function(){
-		thumbnailHover("scarf-overlay", false);
-	};
-	
-	// Show Illustration 
-	scarfThumb.onclick=function(){
-		//$( "#current-img" ).attr( "src", "../images/illustrations/scarf.png" )
-		//$( "#img-viewer" ).fadeIn( "fast" );
-		showImg( "../images/illustrations/scarf-copy.png", "#scarf-desc" );
-	};*/
+	imgGallery.initialize();
 });
