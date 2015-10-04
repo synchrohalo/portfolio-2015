@@ -1,31 +1,42 @@
 /********** MAIN **********/
-
 body{
 	margin:0 auto;
-	margin-top:1em;
-	color:#929292;
 	font-family:"Quicksand",sans-serif;
 	font-size:1.375em;
 	width:100%;
+	color:#999;
+}
+
+#index{
+	overflow:hidden;
 }
 
 a{
-	color:#555;
+	color:#c6839a;
 	text-decoration:none;
 	font-weight:bold;
 }
 
 a:hover{
-	color:#c6839a;
+	color:#555;
+}
+
+#main a{
+	color:#355677;
+}
+
+#main a:hover{
+	color:#fff;
 }
 
 #self-portrait{
-	max-width:22em;
+	margin-top:5%;
+	max-width:30em;
 }
 
 #construction{
 	font-size:1.25em;
-	color:#c6839a;
+	color:#fff;
 	letter-spacing:0.025em;
 	margin-top:-1.5em;
 }
@@ -36,8 +47,18 @@ img{
 }
 
 #main {
+	margin:0 auto;
+	padding:0;
+	position:relative;
+	height:100vh;
+	width:100vw;
 	text-align:center;
-	margin-top:5%;
+	background-color:#c6839a;
+}
+
+#main .page-title{
+	color:#355677;
+	font-size:2.5em;
 }
 
 #nav{
@@ -72,7 +93,7 @@ img{
 	font-family:'Slabo 27px',serif;
 	text-align:center;
 	text-transform:uppercase;
-	color:#626262;
+	color:#555;
 	letter-spacing:0.075em;
 }
 
@@ -84,7 +105,6 @@ h6{
 
 #works{
 	text-align:center;
-	
 }
 
 #projects-list{
@@ -108,7 +128,11 @@ h6{
 	background-color:#999;
 }
 
-#misc .page-title{
+/*#projects{
+	margin-top:3em;
+}*/ 
+
+#misc{
 	margin-top:1.25em;
 }
 
@@ -130,6 +154,10 @@ h6{
 	border-radius:100%;
 	padding:0;
 	z-index:3;
+}
+
+.second-overlay{
+	display:none;
 }
 
 #DT-thumb{
@@ -165,7 +193,7 @@ h6{
 .banner{
 	display:none;
 	height:22em;
-	width:100vw;
+	width:100%;
 	background-attachment:fixed;
 	background-size:cover;
 	margin-bottom:1em;
@@ -245,7 +273,7 @@ h6{
 
 .small-label{
 	letter-spacing:0.05em;
-	color:#626262;
+	color:#777;
 }
 
 .small-description{
@@ -318,7 +346,7 @@ h6{
 	position:fixed;
 	bottom:0;
 	width:100vw;
-	height:500px;
+	height:38em;
 	background-color:#aa6b7d;
 	-webkit-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
 	-moz-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);

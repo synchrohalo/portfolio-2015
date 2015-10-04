@@ -3,11 +3,13 @@ $( document ).ready(function() {
 	/********** WORKS **********/
 
 	function show(id,dispType){
-		document.getElementById(id).style.display = dispType;
+		//document.getElementById(id).style.display = dispType;
+		$( "#" + id ).css( "display", dispType );
 	}
 
 	function hide(id){
-		document.getElementById(id).style.display = "none";
+		//document.getElementById(id).style.display = "none";
+		$( "#" + id ).css( "display", "none" );
 	}
 
 	function changeTitle(title){
@@ -30,9 +32,25 @@ $( document ).ready(function() {
 	var mbThumb = document.getElementById("MB-thumb");
 	var mbBack = document.getElementById("MB-back");
 	
-
+	
+	function navGoTo( id ){
+		$( "#" + id + "-nav" ).unbind( "click" ).click(function(){
+			/*$( "#main" ).animate({
+				bottom:"+=100vh"
+			}, 750, function() {
+				$( "#main" ).css( "display", "none" );*/
+				window.location.href = "../Portfolio 2015/html/" + id + ".html";
+			//});
+		});
+	}
+	
+	navGoTo( "works" );
+	navGoTo( "about" );
+	navGoTo( "contact" );
+	
 	dtThumb.onclick=function(){
 		show("DT-details","block");
+		//$( "#DT-banner" ).slideToggle( 600 );
 		show("DT-banner","block");
 		hide("projects");
 		changeTitle("Design Thinking Mobile App | Joanne Arboleda");
@@ -48,6 +66,7 @@ $( document ).ready(function() {
 
 	dtBack.onclick=function(){
 		show("projects","block");
+		//$( "#DT-banner" ).slideToggle( "slow" );
 		hide("DT-banner");
 		hide("DT-details");
 		changeTitle("Works | Joanne Arboleda");
@@ -146,7 +165,6 @@ $( document ).ready(function() {
 				var src = this.getSrc();
 				var index = this.getIndex();
 				
-				$( "#" + id + "-overlay" ).css( "visibility", "visible");
 				$( "#" + id + "-desc" ).show();
 				$( "#current-img" ).attr( "src", src );
 				
@@ -163,7 +181,7 @@ $( document ).ready(function() {
 				// show viewer if not already on
 				if( !viewerOn ){
 					$( "#bg-overlay" ).show();
-					$( "body" ).height( $( "body" ).height() + 475 );
+					$( "body" ).height( $( "body" ).height() + $( ".img-container" ).height() );
 					$( ".img-container" ).slideToggle( "slow" );
 					$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
 				}
@@ -180,7 +198,7 @@ $( document ).ready(function() {
 				
 				// hide viewer if not already off
 				if( viewerOn ){
-					$( "body" ).height( $( "body" ).height() - 475 );
+					$( "body" ).height( $( "body" ).height() - $( ".img-container" ).height() );
 					$( ".img-container" ).slideToggle( "slow" );
 				}
 			}, // hide image
@@ -203,7 +221,7 @@ $( document ).ready(function() {
 		}
 	};
 	
-	var gallery = function( ){
+	var gallery = function(){
 		return{
 			imgList: [],
 			isViewing: false,
