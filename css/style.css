@@ -3,12 +3,19 @@ body{
 	margin:0 auto;
 	font-family:"Quicksand",sans-serif;
 	font-size:1.375em;
+	height:100%;
 	width:100%;
 	color:#999;
 }
 
 #index{
-	overflow:hidden;
+	/*overflow:hidden;*/
+}
+
+
+img{
+	margin:0 auto;
+	max-width:100%;
 }
 
 a{
@@ -30,7 +37,9 @@ a:hover{
 }
 
 #self-portrait{
+	width:35%;
 	margin-top:5%;
+	min-width:20em;
 	max-width:30em;
 }
 
@@ -41,17 +50,12 @@ a:hover{
 	margin-top:-1.5em;
 }
 
-img{
-	margin:0 auto;
-	max-width:100%;
-}
-
 #main {
 	margin:0 auto;
 	padding:0;
 	position:relative;
 	height:100vh;
-	width:100vw;
+	width:100%;
 	text-align:center;
 	background-color:#c6839a;
 }
@@ -218,8 +222,8 @@ h6{
 
 .text-body{
 	margin:0 auto;
-	width:70%;
-	min-width:50em;
+	width:75%;
+	/*min-width:50em;*/
 	margin-bottom:3em;
 }
 
@@ -237,9 +241,10 @@ h6{
 }
 
 .back{
+	width:5em;
 	position:fixed;
 	bottom:5vh;
-	left:90vw;
+	left:75vw;
 	font-weight:bold;
 }
 
@@ -250,6 +255,7 @@ h6{
 }
 
 .wide-img{
+	width:100%;
 	max-width:35em;
 }
 

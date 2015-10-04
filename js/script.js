@@ -35,18 +35,27 @@ $( document ).ready(function() {
 	
 	function navGoTo( id ){
 		$( "#" + id + "-nav" ).unbind( "click" ).click(function(){
-			/*$( "#main" ).animate({
+			$( "#main" ).animate({
 				bottom:"+=100vh"
 			}, 750, function() {
-				$( "#main" ).css( "display", "none" );*/
-				window.location.href = "../html/" + id + ".html";
-			//});
+				$( "#main" ).css( "display", "none" );
+				window.location.href = "../Portfolio 2015/html/" + id + ".html";
+			});
 		});
 	}
 	
 	navGoTo( "works" );
 	navGoTo( "about" );
 	navGoTo( "contact" );
+	
+	$( "#home-nav" ).unbind( "click" ).click(function(){
+		$( "#main" ).animate({
+			bottom:"-=100vh"
+		}, 750, function() {
+			//window.location.href = "../Portfolio 2015/html/" + id + ".html";
+			window.location.href = "../html/" + id + ".html";
+		});
+	});
 	
 	dtThumb.onclick=function(){
 		show("DT-details","block");
