@@ -20,7 +20,7 @@ a{
 }
 
 a:hover{
-	color:#555;
+	color:#355677;
 }
 
 #main a{
@@ -43,6 +43,7 @@ a:hover{
 	color:#fff;
 	letter-spacing:0.025em;
 	margin-top:-1.5em;
+	padding:0.25em;
 }
 
 #main {
@@ -60,6 +61,7 @@ a:hover{
 #main .page-title{
 	color:#355677;
 	font-size:2.5em;
+	padding:0.5em;
 }
 
 #nav{
@@ -144,8 +146,6 @@ h6{
 
 .thumbnail{
 	background-size:cover;
-	/*-webkit-filter:grayscale(100%);
-	filter:grayscale(100%);*/
 }
 
 .thumb-overlay{
@@ -237,14 +237,6 @@ h6{
 	width:75%;
 	/*min-width:50em;*/
 	margin-bottom:3em;
-}
-
-.text-body a{
-	color:#c6839a;
-}
-
-.text-body a:hover{
-	color:#626262;
 }
 
 .header{
@@ -349,11 +341,11 @@ h6{
 	position:fixed;
 	top:0;
 	left:0;
-	height:100vh;
-	width:100vw;
+	height:100%;
+	width:100%;
 	background-color:#fff;
 	z-index:5;
-	opacity:0;
+	opacity:0.5;
 }
 
 .img-container{
@@ -398,14 +390,11 @@ h6{
 	display:none;
 	text-align:center;
 	margin-top:2em;
-	/*padding-bottom:1em;*/
-	/*margin-bottom:1em;*/
 	width:50%;
 	height:100%;
 	position:absolute;
 	right:0;
 	top:0;
-	overflow:scroll;
 }
 
 .img-desc h5,.img-desc h6{
@@ -443,7 +432,7 @@ h6{
 
 	#current-img{
 		height:auto;
-		height:75%;
+		height:90%;
 		top:50%;
 		left:50%;
 		transform:translate(-50%, -50%);
@@ -462,6 +451,7 @@ h6{
 		margin-top:0em;
 		padding-top:0.5em;
 		padding-bottom:-2em;
+		overflow:scroll;
 		overflow-x:hidden;
 	}
 	

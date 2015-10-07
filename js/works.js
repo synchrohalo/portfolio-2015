@@ -163,12 +163,18 @@ $( document ).ready(function() {
 					$( "#prev-arrow" ).show();
 				}
 				
+				$( ".img-desc" ).scrollTop( 0 );
+				
 				// show viewer if not already on
 				if( !viewerOn ){
-					$( "#bg-overlay" ).show();
-					$( "body" ).height( $( "body" ).height() + ( $( ".img-container" ).height() * 1.10 ) );
+					$( "#bg-overlay" ).show().fadeIn( "slow" );
+					//$( "body" ).height( $( "body" ).height() + ( $( ".img-container" ).height() * 1.10 ) );
 					$( ".img-container" ).slideToggle( "slow" );
 					$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
+				}
+				
+				if( !isMobile() ){
+					$( ".img-desc p" ).css( "width", "50%" );
 				}
 			}, // display image in viewer
 			
