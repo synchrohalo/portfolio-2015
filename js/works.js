@@ -1,6 +1,14 @@
 $( document ).ready(function() {
 	
 	/********** PROJECTS **********/
+	var isMobile = function(){
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			return true;
+		}
+		else{ return false; }
+	}
+	
+	
 	var project = function( title, idName ){
 		return {
 			title: this.title, // image title
@@ -32,13 +40,15 @@ $( document ).ready(function() {
 			hoverToggle: function(){
 				var id = this.getIdName();
 				
-				$( "#" + id + "-thumb" )
-					.mouseenter(function(){ 
-						$( "#" + id + "-overlay" ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
-					})
-					.mouseleave(function(){
-						$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
-					});
+				if( !isMobile() ){
+					$( "#" + id + "-thumb" )
+						.mouseenter(function(){ 
+							$( "#" + id + "-overlay" ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
+						})
+						.mouseleave(function(){
+							$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
+						});
+				}
 			}, // hovering over thumbnails
 			
 			displayToggle: function(){
@@ -120,13 +130,20 @@ $( document ).ready(function() {
 			hoverToggle: function(){
 				var id = this.getIdName();
 				
-				$( "#" + id + "-thumb" )
-					.mouseenter(function(){ 
-						$( "#" + id + "-overlay" ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
-					})
-					.mouseleave(function(){
-						$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
-					});
+				if( !isMobile() ){
+					$( "#" + id + "-thumb" )
+						.mouseenter(function(){ 
+							$( "#" + id + "-overlay" ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
+						})
+						.mouseleave(function(){
+							$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
+						});
+				}
+				else{
+					$( ".thumb-overlay" ).css( "visibility", "visible");
+					$( ".thumb-overlay" ).css( "opacity", 0.75);
+				
+				}
 			}, // hovering over thumbnails
 			
 			display: function( viewerOn, len ){
@@ -223,7 +240,7 @@ $( document ).ready(function() {
 	imgGallery.addImg( galleryPic( "<em>Legend of Zelda</em>-Inspired Card", "card" ) ); // Zelda card, 0
 	imgGallery.addImg( galleryPic( "<em>Adventure Time</em> Lich Poster", "lich" ) ); // Lich poster, 1
 	imgGallery.addImg( galleryPic( "Scarf Girl Illustration", "scarf" ) ); // Scarf girl illustration, 2
-	imgGallery.addImg( galleryPic( "Bookish Girl Illustration", "book-girl" ) ); // Bookish girl illustration, 3
+	imgGallery.addImg( galleryPic( "Bookish Girl Illustration", "book" ) ); // Bookish girl illustration, 3
 	
 	imgGallery.initialize();
 });

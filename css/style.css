@@ -180,8 +180,8 @@ h6{
 	background-image:url("../images/thumbnails/greyscale/thumb-lich.png");
 }
 
-#book-girl-thumb{
-	background-image:url("../images/thumbnails/greyscale/thumb-book-girl.png");
+#book-thumb{
+	background-image:url("../images/thumbnails/greyscale/thumb-book.png");
 }
 
 #scarf-thumb{
@@ -362,23 +362,28 @@ h6{
 	opacity:0.25;
 }
 
+.img-side{
+	height:100%;
+	width:50%;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
 #current-img{
-	/*width:25vw;
-	min-width:9em;
-	max-width:21em;*/
 	height:80%;
-	/*max-width:20%;*/
 	position:absolute;
 	top:50%;
-	left:18%;
-	transform:translate(-18%, -50%);
+	left:50%;
+	transform:translate(-50%, -50%);
 }
 
 .img-desc{
 	display:none;
 	text-align:center;
-	padding-bottom:1em;
-	margin-bottom:1em;
+	margin-top:2em;
+	/*padding-bottom:1em;*/
+	/*margin-bottom:1em;*/
 	width:50%;
 	height:100%;
 	position:absolute;
@@ -387,8 +392,12 @@ h6{
 	overflow:scroll;
 }
 
+.img-desc h5,.img-desc h6{
+	margin:0 auto;
+	width:80%;
+}
+
 .img-desc h6{
-	margin-top:-0.5em;
 	font-size:1.25em;
 }
 
@@ -399,34 +408,58 @@ h6{
 .img-desc p{
 	text-align:left;
 	margin:0 auto;
-	margin-bottom:1em;
-	width:50%;
+	width:75%;
+	margin-top:1em;
 }
 
 @media screen and (orientation:portrait){
 
 	.img-container{
-		height:75%;
+		height:80%;
+	}
+	
+	.img-side{
+		height:60%;
+		width:100%;
+		position:absolute;
+		bottom:0;
 	}
 
 	#current-img{
 		height:auto;
-		width:50%;
-		bottom:2.5%;
+		height:75%;
+		top:50%;
 		left:50%;
-		transform:translate(-50%, -20%);
+		transform:translate(-50%, -50%);
 	}
 	
 	.img-bg{
-		display:none;
+		height:40%;
+		width:100%;
 	}
 	
 	.img-desc{
 		width:100%;
-		height:30%;
-		bottom:0;
+		height:38%;
+		bottom:0%;
+		margin-top:0em;
+		padding-top:0.5em;
+		padding-bottom:-2em;
+		overflow-x:hidden;
 	}
+	
+	/*.thumb-overlay{
+		visibility:visible;
+		opacity:0.75;
+	}*/
 
+}
+
+@media screen and (orientation:landscape){
+	/*.thumb-overlay{
+		visibility:visible;
+		opacity:0.75;
+	}*/
 }
 
 .img-arrows{
