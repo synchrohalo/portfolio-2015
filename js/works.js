@@ -165,6 +165,7 @@ $( document ).ready(function() {
 				
 				$( ".img-desc" ).scrollTop( 0 );
 				
+				
 				// show viewer if not already on
 				if( !viewerOn ){
 					$( "#bg-overlay" ).show().fadeIn( "slow" );
