@@ -28,6 +28,10 @@ a:hover{
 	background-color:#355677;
 }
 
+.cur-page:hover{
+	color:#c6839a;
+}
+
 #main a{
 	color:#355677;
 }
