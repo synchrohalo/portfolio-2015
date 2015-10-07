@@ -176,6 +176,10 @@ $( document ).ready(function() {
 				if( !isMobile() ){
 					$( ".img-desc p" ).css( "width", "50%" );
 				}
+				else{
+					$( ".img-desc" ).css( "overflow", "scroll" );
+					$( ".img-desc" ).css( "overflow-x", "hidden" );
+				}
 			}, // display image in viewer
 			
 			hide: function( viewerOn ){
