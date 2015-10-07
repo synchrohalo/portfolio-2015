@@ -49,6 +49,10 @@ $( document ).ready(function() {
 							$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
 						});
 				}
+				else{
+					$( ".thumb-overlay" ).css( "visibility", "hidden");
+					$( ".mobile-overlay" ).show();
+				}
 			}, // hovering over thumbnails
 			
 			displayToggle: function(){
@@ -140,9 +144,7 @@ $( document ).ready(function() {
 						});
 				}
 				else{
-					$( ".thumb-overlay" ).css( "visibility", "visible");
-					$( ".thumb-overlay" ).css( "opacity", 0.75);
-				
+					$( ".mobile-overlay" ).show();
 				}
 			}, // hovering over thumbnails
 			
