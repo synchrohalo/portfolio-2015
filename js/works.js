@@ -164,7 +164,7 @@ $( document ).ready(function() {
 				// show viewer if not already on
 				if( !viewerOn ){
 					$( "#bg-overlay" ).show();
-					$( "body" ).height( $( "body" ).height() + $( ".img-container" ).height() );
+					$( "body" ).height( $( "body" ).height() + ( $( ".img-container" ).height() * 1.10 ) );
 					$( ".img-container" ).slideToggle( "slow" );
 					$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
 				}
@@ -181,7 +181,7 @@ $( document ).ready(function() {
 				
 				// hide viewer if not already off
 				if( viewerOn ){
-					$( "body" ).height( $( "body" ).height() - $( ".img-container" ).height() );
+					$( "body" ).height( $( "body" ).height() - ( $( ".img-container" ).height() * 1.10 ) );
 					$( ".img-container" ).slideToggle( "slow" );
 				}
 			}, // hide image
