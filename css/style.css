@@ -1,4 +1,4 @@
-/********** MAIN **********/
+/************** MAIN **************/
 body{
 	margin:0 auto;
 	font-family:"Quicksand",sans-serif;
@@ -136,10 +136,6 @@ h6{
 	background-color:#999;
 }
 
-/*#projects{
-	margin-top:3em;
-}*/ 
-
 #misc{
 	margin-top:1.25em;
 }
@@ -162,10 +158,6 @@ h6{
 	border-radius:100%;
 	padding:0;
 	z-index:3;
-}
-
-.second-overlay{
-	display:none;
 }
 
 #DT-thumb{
@@ -200,7 +192,8 @@ h6{
 
 .banner{
 	display:none;
-	height:22em;
+	height:40vh;
+	max-height:25em;
 	width:100%;
 	background-attachment:fixed;
 	background-size:cover;
@@ -334,9 +327,6 @@ h6{
 	top:15%;
 	left:40vw;
 	max-width:25em;
-	/*-webkit-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
-	-moz-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
-    box-shadow:0em 0em 5em 2em rgba(0, 0, 0, 0.9);*/
 }
 
 #bg-overlay{
@@ -357,7 +347,7 @@ h6{
 	position:fixed;
 	bottom:0;
 	width:100vw;
-	height:38em;
+	height:70%;
 	background-color:#aa6b7d;
 	-webkit-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
 	-moz-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
@@ -373,23 +363,28 @@ h6{
 }
 
 #current-img{
-	width:20vw;
-	min-width:15em;
-	max-width:21em;
+	/*width:25vw;
+	min-width:9em;
+	max-width:21em;*/
+	height:80%;
+	/*max-width:20%;*/
 	position:absolute;
 	top:50%;
-	left:20%;
-	transform:translate(-20%, -50%);
+	left:18%;
+	transform:translate(-18%, -50%);
 }
 
 .img-desc{
 	display:none;
 	text-align:center;
-	width:50vw;
+	padding-bottom:1em;
+	margin-bottom:1em;
+	width:50%;
 	height:100%;
 	position:absolute;
 	right:0;
 	top:0;
+	overflow:scroll;
 }
 
 .img-desc h6{
@@ -406,6 +401,32 @@ h6{
 	margin:0 auto;
 	margin-bottom:1em;
 	width:50%;
+}
+
+@media screen and (orientation:portrait){
+
+	.img-container{
+		height:75%;
+	}
+
+	#current-img{
+		height:auto;
+		width:50%;
+		bottom:2.5%;
+		left:50%;
+		transform:translate(-50%, -20%);
+	}
+	
+	.img-bg{
+		display:none;
+	}
+	
+	.img-desc{
+		width:100%;
+		height:30%;
+		bottom:0;
+	}
+
 }
 
 .img-arrows{
