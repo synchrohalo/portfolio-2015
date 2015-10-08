@@ -159,17 +159,21 @@ h6{
 }
 
 .thumb-overlay{
-	visibility:hidden;
-	position:relative;
-	top:0em;
+	display:none;
+	position:absolute;
+	/*top:0em;*/
 	background-color:#c6839a;
-	font-size:0.9em;
+	font-size:1em;
 	opacity:0.9;
-	height:100%;
-	width:100%;
+	height:14em;
+	width:14em;
 	border-radius:100%;
 	padding:0;
-	z-index:3;
+	z-index:5;
+}
+
+.thumb-overlay span{
+	font-size:0.9em;
 }
 
 .mobile-overlay{
