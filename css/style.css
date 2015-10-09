@@ -161,7 +161,6 @@ h6{
 .thumb-overlay{
 	display:none;
 	position:absolute;
-	/*top:0em;*/
 	background-color:#c6839a;
 	font-size:1em;
 	opacity:0.9;
@@ -183,7 +182,7 @@ h6{
 	text-align:center;
 	width:100%;
 	position:relative;
-	bottom:10%;
+	top:90%;
 	font-size:0.8;
 	background-color:#c6839a;
 	opacity:0.9;
