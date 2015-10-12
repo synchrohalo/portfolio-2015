@@ -137,11 +137,12 @@ $( document ).ready(function() {
 				if( !isMobile() ){
 					$( "#" + id + "-thumb" )
 						.mouseenter(function(){ 
-							$( "#" + id + "-overlay" ).css( "visibility", "visible" ).hide().fadeIn( "fast" );
+							$( "#" + id + "-overlay" ).fadeIn( "fast" );
+							console.log( "#" + id + "-overlay" );
 						})
 						.mouseleave(function(){
-							$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
-						});
+							$( "#" + id + "-overlay" ).fadeOut( "fast" );
+						})
 				}
 				else{
 					$( ".mobile-overlay" ).show();
@@ -168,10 +169,12 @@ $( document ).ready(function() {
 				
 				// show viewer if not already on
 				if( !viewerOn ){
-					$( "#bg-overlay" ).show().fadeIn( "slow" );
-					//$( "body" ).height( $( "body" ).height() + ( $( ".img-container" ).height() * 1.10 ) );
-					$( ".img-container" ).slideToggle( "slow" );
-					$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
+					$( "body, html" ).css( "overflow", "hidden" );
+					$( "#bg-overlay" ).show().fadeIn( "slow", function(){
+						//$( "body" ).height( $( "body" ).height() + ( $( ".img-container" ).height() * 1.10 ) );
+						$( ".img-container" ).slideToggle( "slow" );
+						$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
+					});
 				}
 				
 				if( !isMobile() ){
@@ -194,6 +197,7 @@ $( document ).ready(function() {
 				
 				// hide viewer if not already off
 				if( viewerOn ){
+					$( "body, html" ).css( "overflow", "visible" );
 					$( "body" ).height( $( "body" ).height() - ( $( ".img-container" ).height() * 1.10 ) );
 					$( ".img-container" ).slideToggle( "slow" );
 				}
