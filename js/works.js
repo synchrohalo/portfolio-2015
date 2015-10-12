@@ -190,8 +190,8 @@ $( document ).ready(function() {
 				var id = this.getIdName();
 				
 				$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
-				$( "#next-img" ).hide();
-				$( "#prev-img" ).hide();
+				//$( "#next-img" ).hide();
+				//$( "#prev-img" ).hide();
 				$( "#bg-overlay" ).hide();
 				$( ".img-desc" ).hide();
 				
