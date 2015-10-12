@@ -198,7 +198,7 @@ $( document ).ready(function() {
 				// hide viewer if not already off
 				if( viewerOn ){
 					$( "body, html" ).css( "overflow", "visible" );
-					$( "body" ).height( $( "body" ).height() - ( $( ".img-container" ).height() * 1.10 ) );
+					//$( "body" ).height( $( "body" ).height() - ( $( ".img-container" ).height() * 1.10 ) );
 					$( ".img-container" ).slideToggle( "slow" );
 				}
 			}, // hide image
