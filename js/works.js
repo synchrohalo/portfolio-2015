@@ -167,6 +167,15 @@ $( document ).ready(function() {
 				$( ".img-desc" ).scrollTop( 0 );
 				
 				
+				if( !isMobile() ){
+					$( ".img-desc p" ).css( "width", "50%" );
+				}
+				else{
+					$( ".img-container" ).css( "height", "100%" );
+					$( ".img-desc" ).css( "overflow", "scroll" );
+					$( ".img-desc" ).css( "overflow-x", "hidden" );
+				}
+				
 				// show viewer if not already on
 				if( !viewerOn ){
 					$( "#bg-overlay" ).show().fadeIn( "slow", function(){
@@ -181,14 +190,6 @@ $( document ).ready(function() {
 							//$( "body, html" ).css( "height", "100%" );
 						});
 					});
-				}
-				
-				if( !isMobile() ){
-					$( ".img-desc p" ).css( "width", "50%" );
-				}
-				else{
-					$( ".img-desc" ).css( "overflow", "scroll" );
-					$( ".img-desc" ).css( "overflow-x", "hidden" );
 				}
 			}, // display image in viewer
 			

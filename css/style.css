@@ -434,7 +434,7 @@ h6{
 @media screen and (orientation:portrait){
 
 	.img-container{
-		height:80%;
+		height:100%;
 	}
 	
 	.img-side{
@@ -503,8 +503,13 @@ h6{
 	color:#000;
 	position:absolute;
 	right:2%;
-	top:2%;
+	top:-1.5%;
 	font-size:2.5em;
 	opacity:0.25;
 	font-weight:bold;
+}
+
+.exit-viewer:hover{
+	opacity:0.5;
+	cursor:pointer;
 }
