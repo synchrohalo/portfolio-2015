@@ -174,7 +174,7 @@ $( document ).ready(function() {
 						$( ".img-container" ).slideToggle( "slow" );
 						$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast", function() {							
 							$( "body, html" ).css( "overflow", "hidden" );
-							$('html, body').on('touchstart touchmove', function(e){ 
+							$( "#bg-overlay" ).on('touchstart touchmove', function(e){ 
 								 //prevent native touch activity like scrolling
 								 e.preventDefault(); 
 							});
