@@ -174,6 +174,7 @@ $( document ).ready(function() {
 					$( ".img-container" ).css( "height", "100%" );
 					$( ".img-desc" ).css( "overflow", "scroll" );
 					$( ".img-desc" ).css( "overflow-x", "hidden" );
+					$( ".exit-viewer" ).css( "font-size", "1.5em" );
 				}
 				
 				// show viewer if not already on
@@ -222,7 +223,7 @@ $( document ).ready(function() {
 				$( "#bg-overlay" ).unbind( "click" ).click(function(){
 					obj.hide( true );
 				});
-				$( ".exit-viewer p" ).unbind( "click" ).click(function(){
+				$( ".exit-viewer" ).unbind( "click" ).click(function(){
 					obj.hide( true );
 				});
 			} // toggle image viewer

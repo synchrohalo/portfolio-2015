@@ -431,6 +431,27 @@ h6{
 	margin-top:1em;
 }
 
+.exit-viewer{
+	position:absolute;
+	top:5%;
+	right:2%;
+	height:1.25em;
+	width:1.25em;
+	color:#000;
+	font-size:2.5em;
+	font-weight:bold;
+	background-color:#fff;
+	z-index:7;
+	text-align:center;
+	border-radius:100%;
+	opacity:0.4;
+}
+
+.exit-viewer:hover{
+	opacity:0.5;
+	cursor:pointer;
+}
+
 @media screen and (orientation:portrait){
 
 	.img-container{
@@ -470,6 +491,11 @@ h6{
 		overflow-x:hidden;
 	}
 	
+	.exit-viewer{
+		font-size:1.5em;
+		top:2%;
+	}
+	
 }
 
 .img-arrows{
@@ -498,19 +524,4 @@ h6{
 	position:absolute;
 	left:52.5%;
 	bottom:50%;
-}
-
-.exit-viewer{
-	color:#000;
-	position:absolute;
-	right:2%;
-	top:-1.5%;
-	font-size:2.5em;
-	opacity:0.25;
-	font-weight:bold;
-}
-
-.exit-viewer:hover{
-	opacity:0.5;
-	cursor:pointer;
 }
