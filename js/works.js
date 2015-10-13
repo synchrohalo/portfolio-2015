@@ -169,11 +169,13 @@ $( document ).ready(function() {
 				
 				// show viewer if not already on
 				if( !viewerOn ){
-					$( "body, html" ).css( "overflow", "hidden" );
 					$( "#bg-overlay" ).show().fadeIn( "slow", function(){
 						//$( "body" ).height( $( "body" ).height() + ( $( ".img-container" ).height() * 1.10 ) );
 						$( ".img-container" ).slideToggle( "slow" );
-						$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast");
+						$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast", function() {							
+							$( "body, html" ).css( "overflow", "hidden" );
+							//$( "body, html" ).css( "height", "100%" );
+						});
 					});
 				}
 				
@@ -197,7 +199,8 @@ $( document ).ready(function() {
 				
 				// hide viewer if not already off
 				if( viewerOn ){
-					$( "body, html" ).css( "overflow", "visible" );
+					$( "body, html" ).css( "overflow", "auto" );
+					$( "body, html" ).css( "height", "auto" );
 					//$( "body" ).height( $( "body" ).height() - ( $( ".img-container" ).height() * 1.10 ) );
 					$( ".img-container" ).slideToggle( "slow" );
 				}
