@@ -175,6 +175,7 @@ $( document ).ready(function() {
 					$( ".img-desc" ).css( "overflow", "scroll" );
 					$( ".img-desc" ).css( "overflow-x", "hidden" );
 					$( ".exit-viewer" ).css( "font-size", "1.5em" );
+					$( ".exit-viewer" ).css( "padding-left", "1px" );
 				}
 				
 				// show viewer if not already on
