@@ -490,7 +490,7 @@ h6{
 @media screen and (orientation:portrait){
 
 	#main .page-title{
-		padding-top:20%;
+		/*padding-top:20%;*/
 	}
 
 	#self-portrait{
@@ -504,6 +504,9 @@ h6{
 	
 	#main #nav li{
 		color:#355677;
+		height:7em;
+		width:7em;
+		margin-top:1em;
 	}
 
 	.img-container{
