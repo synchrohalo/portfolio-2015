@@ -1,6 +1,7 @@
 /************** MAIN **************/
 body{
 	margin:0 auto;
+	padding:0;
 	font-family:"Quicksand",sans-serif;
 	font-size:1.375em;
 	height:100%;
@@ -24,8 +25,7 @@ a:hover{
 }
 
 .cur-page{
-	color:#c6839a;
-	background-color:#355677;
+	color:#355677;
 }
 
 .cur-page:hover{
@@ -42,7 +42,7 @@ a:hover{
 
 #self-portrait{
 	width:50%;
-	margin-top:2.5%;
+	margin-top:2%;
 	/*margin-top:-1.25em;*/
 	min-width:20em;
 	max-width:25em;
@@ -50,14 +50,14 @@ a:hover{
 
 #short-description{
 	margin:0 auto;
-	font-size:1em;
+	font-size:1.1em;
 	color:#d8c0cf;
 	letter-spacing:0.025em;
 	margin-top:-2.5em;
 	margin-bottom:0.5em;
 	/*margin-top:0;*/
 	padding:0.25em;
-	width:30%;
+	width:25%;
 	line-height:150%;
 	letter-spacing:0.05em;
 }
@@ -72,8 +72,8 @@ a:hover{
 	min-width:100vw;
 	text-align:center;
 	background-color:#c6839a;
-	-webkit-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
-	-moz-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
+	-webkit-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
     box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
 }
 
@@ -88,11 +88,11 @@ a:hover{
 #nav{
 	list-style-type:none;
 	text-transform:uppercase;
-	margin-top:2em;
 	letter-spacing:0.075em;
 	font-weight:bold;
 	font-size:0.9em;
 	margin-bottom:3.5em;
+	margin-top:1em;
 }
 
 #nav li{
@@ -100,6 +100,20 @@ a:hover{
 	margin-left:1em;
 	margin-right:1em;
 }
+
+/*.page-nav{
+	position:fixed;
+	left:0%;
+	background-color:#fff;
+	height:5%;
+	width:100vw;
+	padding-top:1.5em;
+	z-index:7;
+	-webkit-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
+    box-shadow:0em 0em 1em 0.05em rgba(0, 0, 0, 0.25);
+	overflow:visible;
+}*/
 
 .line-break{
 	margin-top:-0.5em;
@@ -122,30 +136,34 @@ a:hover{
 	-webkit-transform:translate(-50%,-50%);
 }
 
-#main #nav{
-	/*position:fixed;
-	bottom:0%;
-	background-color:#000;
-	opacity:1;
-	height:10em;
-	width:100vw;*/
-}
-
 #main #nav li{
+	font-size:0.9em;
 	background-color:#355677;
-	height:10vw;
-	width:10vw;
+	height:7vw;
+	width:7vw;
 	border-radius:100%;
 	text-align:center;
 	display:inline-block;
+	min-height:4.5em;
+	min-width:4.5em;
+	max-width:6em;
+	max-height:6em;
+}
+
+#main #nav li:hover{
+	background-color:#4f6b88;
+}
+
+#main #nav li{
+	font-size:1em;
 	min-height:5em;
 	min-width:5em;
 	max-width:6.75em;
 	max-height:6.75em;
 }
 
-#main #nav li:hover{
-	background-color:#4f6b88;
+#main #nav .page-name{
+	visibility:visible;
 }
 
 .page-title{
@@ -394,13 +412,13 @@ h6{
 	height:100%;
 	width:100%;
 	background-color:#fff;
-	z-index:5;
+	z-index:8;
 	opacity:0.75;
 }
 
 .img-container{
 	display:none;
-	z-index:6;
+	z-index:9;
 	position:fixed;
 	bottom:0;
 	width:100vw;
