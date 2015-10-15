@@ -34,7 +34,7 @@ $( document ).ready(function() {
 	}
 	
 	if( isMobile() ){
-		$( ".page-nav" ).css( "min-height", "9vh" );
-		$( "#nav.page-nav li p" ).css( "line-height", "9vh" );
+		$( ".page-nav" ).css( "min-height", "8vh" );
+		$( "#nav.page-nav li p" ).css( "line-height", "8vh" );
 	}
 });
