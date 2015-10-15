@@ -36,5 +36,6 @@ $( document ).ready(function() {
 	if( isMobile() ){
 		$( ".page-nav" ).css( "min-height", "8vh" );
 		$( "#nav.page-nav li p" ).css( "line-height", "8vh" );
+		$( ".banner" ).css( "margin-top", "-5vh" );
 	}
 });
