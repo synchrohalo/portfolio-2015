@@ -91,29 +91,36 @@ a:hover{
 	letter-spacing:0.075em;
 	font-weight:bold;
 	font-size:0.9em;
-	margin-bottom:3.5em;
-	margin-top:1em;
 }
 
 #nav li{
-	display:inline;
 	margin-left:1em;
 	margin-right:1em;
+	display:inline;
 }
 
-/*.page-nav{
+#nav.page-nav li p{
+	display:inline;
+	line-height:6vh;
+}
+
+.page-nav{
 	position:fixed;
 	left:0%;
 	background-color:#fff;
-	height:5%;
+	min-height:6vh;
+	height:auto;
 	width:100vw;
-	padding-top:1.5em;
 	z-index:7;
 	-webkit-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
 	-moz-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
     box-shadow:0em 0em 1em 0.05em rgba(0, 0, 0, 0.25);
 	overflow:visible;
-}*/
+}
+
+.page-content{
+	margin-top:10vh;
+}
 
 .line-break{
 	margin-top:-0.5em;
@@ -280,6 +287,7 @@ h6{
 	width:100%;
 	background-attachment:fixed;
 	background-size:cover;
+	margin-top:-5vh;
 	margin-bottom:1em;
 }
 
@@ -527,6 +535,10 @@ h6{
 		height:7em;
 		width:7em;
 		margin-top:1em;
+	}
+	
+	.page-content{
+		margin-top:20vh;
 	}
 
 	.img-container{
