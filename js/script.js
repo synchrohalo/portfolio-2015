@@ -54,7 +54,8 @@ $( document ).ready(function() {
 				console.log( "dis is happening" );
 				
 				if( name != "home" ){
-					window.location.href = "../html/" + name + ".html";
+					//window.location.href = "../html/" + name + ".html";
+					window.location.href = "../html/" + id + ".html";
 				}
 				else{
 					window.location.href = "../index.html";
@@ -130,8 +131,8 @@ $( document ).ready(function() {
 					bottom:"+=100vh"
 				}, 1000, function() {
 					$( "#main" ).css( "display", "none" );
-					window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+					//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+					window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 					curPage = id;
 				});
 			})
