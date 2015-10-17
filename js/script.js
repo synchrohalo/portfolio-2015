@@ -135,8 +135,8 @@ $( document ).ready(function() {
 					bottom:"+=" + mainHeight
 				}, 1500, function() {
 					$( "#main" ).css( "display", "none" );
-					window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+					//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+					window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 					curPage = id;
 				});
 			})
