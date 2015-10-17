@@ -123,16 +123,20 @@ $( document ).ready(function() {
 	}
 	
 	/********** INDEX NAV **********/
+	mainHeight = $( "#main" ).height() + $( "#main" ).outerHeight() + $( "#main" ).innerHeight();
+	
+	
 	function navGoTo( id ){
 		$( "#main #nav #" + id + "-nav" ).unbind( "click" ).click(function(){
 			console.log( "i am hurr" );
 			$( "html, body" ).animate({ scrollTop: 0 }, "fast", function() {
 				$( "#main" ).animate({
-					bottom:"+=100vh"
-				}, 1000, function() {
+					//bottom:"+=100vh"
+					bottom:"+=" + mainHeight
+				}, 1500, function() {
 					$( "#main" ).css( "display", "none" );
-					//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-					window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+					window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 					curPage = id;
 				});
 			})
