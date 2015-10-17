@@ -55,7 +55,7 @@ $( document ).ready(function() {
 				
 				if( name != "home" ){
 					//window.location.href = "../html/" + name + ".html";
-					window.location.href = "../html/" + id + ".html";
+					window.location.href = "../html/" + name + ".html";
 				}
 				else{
 					window.location.href = "../index.html";
