@@ -24,14 +24,6 @@ a:hover{
 	color:#355677;
 }
 
-.cur-page{
-	color:#355677;
-}
-
-.cur-page:hover{
-	color:#c6839a;
-}
-
 #main a{
 	font-size:1em;
 	color:#355677;
@@ -54,7 +46,7 @@ a:hover{
 	color:#d8c0cf;
 	letter-spacing:0.025em;
 	margin-top:-2.5em;
-	margin-bottom:0.5em;
+	margin-bottom:1.5em;
 	/*margin-top:0;*/
 	padding:0.25em;
 	width:25%;
@@ -82,7 +74,6 @@ a:hover{
 	font-size:2.5em;
 	padding:0.5em;
 	margin-top:-0.5em;
-	/*padding-top:1.5em;*/
 }
 
 #nav{
@@ -94,21 +85,45 @@ a:hover{
 }
 
 #nav li{
-	margin-left:1em;
-	margin-right:1em;
-	display:inline;
+	margin-left:1.25em;
+	margin-right:1.25em;
+	font-size:0.9em;
+	background-color:#355677;
+	height:7vw;
+	width:7vw;
+	border-radius:100%;
+	text-align:center;
+	display:inline-block;
+	min-height:5em;
+	min-width:5em;
+	max-width:7em;
+	max-height:7em;
 }
 
-#nav.page-nav li p{
-	display:inline;
-	line-height:6vh;
+#nav li:hover{
+	background-color:#4f6b88;
+}
+
+.menu-toggle{
+	position:fixed;
+	top:2vh;
+	right:2vw;
+	z-index:8;
+}
+
+.menu-toggle:hover{
+	cursor:pointer;
+}
+
+.menu-toggle img{
+	width:2em;
 }
 
 .page-nav{
 	position:fixed;
 	left:0%;
-	background-color:#fff;
-	min-height:6vh;
+	background-color:#4f6b88;
+	min-height:15vh;
 	height:auto;
 	width:100vw;
 	z-index:7;
@@ -116,6 +131,28 @@ a:hover{
 	-moz-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
     box-shadow:0em 0em 1em 0.05em rgba(0, 0, 0, 0.25);
 	overflow:visible;
+	padding-top:10vh;
+	padding-bottom:10vh;
+}
+
+#nav.page-nav li{
+	background-color:#4f6b88;
+	height:10vw;
+	width:10vw;
+}
+
+#nav.page-nav a{
+	color:#355677;
+}
+
+#nav.page-nav li:hover{
+	background-color:#355677;
+	color:#c6839a;
+}
+
+#nav.page-nav .cur-page{
+	background-color:#355677;
+	color:#c6839a;
 }
 
 .page-content{
@@ -143,42 +180,19 @@ a:hover{
 	-webkit-transform:translate(-50%,-50%);
 }
 
-#main #nav li{
-	font-size:0.9em;
-	background-color:#355677;
-	height:7vw;
-	width:7vw;
-	border-radius:100%;
-	text-align:center;
-	display:inline-block;
-	min-height:4.5em;
-	min-width:4.5em;
-	max-width:6em;
-	max-height:6em;
-}
-
-#main #nav li:hover{
-	background-color:#4f6b88;
-}
-
-#main #nav li{
-	font-size:1em;
-	min-height:5em;
-	min-width:5em;
-	max-width:6.75em;
-	max-height:6.75em;
-}
-
-#main #nav .page-name{
-	visibility:visible;
-}
-
 .page-title{
 	font-family:'Slabo 27px',serif;
 	text-align:center;
 	text-transform:uppercase;
 	color:#555;
 	letter-spacing:0.075em;
+}
+
+.page-subtitle{
+	/*margin-top:-1.25em;*/
+	text-transform:none;
+	color:#777;
+	font-size:1.5em;
 }
 
 h6{
@@ -287,7 +301,7 @@ h6{
 	width:100%;
 	background-attachment:fixed;
 	background-size:cover;
-	margin-top:-5vh;
+	margin-top:0vh;
 	margin-bottom:1em;
 }
 
@@ -311,7 +325,6 @@ h6{
 .text-body{
 	margin:0 auto;
 	width:75%;
-	/*min-width:50em;*/
 	margin-bottom:3em;
 }
 
