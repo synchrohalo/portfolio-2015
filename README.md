@@ -11,6 +11,6 @@
 	<li>let user close navigation by clicking/tapping anywhere else on the page</li>
 	<li>nav icons change slightly on hover</li>
 	<li>put images in <em>contact</em> and <em>about</em> pages to make them look less boring</li>
-	<li>more info on ABOUT and CONTACT pages</li>
+	<li>more info on <em>contact</em> and <em>about</em> pages</li>
 	<li>moar sunflowers (maybe)</li>
 </ul>
