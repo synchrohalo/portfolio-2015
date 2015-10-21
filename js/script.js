@@ -161,8 +161,8 @@ $( document ).ready(function() {
 					$( "#main" ).css( "display", "none" );
 					
 					// redirect to new page
-					window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+					//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+					window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 					curPage = id;
 				});
 			})
