@@ -1,10 +1,13 @@
 $( document ).ready(function() {
+
+	// get page name when each page loads
 	var path = location.pathname;
 	
 	var curPage = path.slice( path.lastIndexOf( "/" ) + 1, path.indexOf( ".html" ) );
 	
 	console.log( curPage );
 	
+	// is user on mobile device?
 	var isMobile = function(){
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			return true;
@@ -12,51 +15,63 @@ $( document ).ready(function() {
 		else{ return false; }
 	}
 	
+	// get height of navigation
 	navHeight = $( ".page-nav" ).height() + $( ".page-nav" ).outerHeight();
 	
+	// navigation initialized to be hidden at top of page
 	$( ".page-nav" ).css( "top", -$( ".page-nav" ).height() - $( ".page-nav" ).outerHeight());
 	
+	// a check if menu is (navigation) on
 	var menuOn = false;
 	
+	// open menu (navigation)
 	var openMenu = function() {
 		$( ".menu-toggle" ).fadeOut( "fast", function() {
+				// toggle becomes white when menu is open
 				$( ".menu-toggle img" ).attr( "src", "../images/icons/menu-white.svg" );
 				$( ".menu-toggle" ).fadeIn( "fast" );
 			});
 			
+			// bring navigation down into view
 			$( ".page-nav" ).animate({
 				top:"+=" + navHeight
-				//top:"+=29vh"
 			}, 500, function() {
+				// bounce effect
 				$( ".page-nav" ).animate({
 					top:"-=1vh"
 			}, 250)
 			});
 			
-			
 			menuOn = true;
 	}
 	
+	// close menu (navigation)
 	var closeMenu = function( changePage, name ) {
 		$( ".menu-toggle" ).fadeOut( "fast", function() {
+			// toggle becomes grey again
 			$( ".menu-toggle img" ).attr( "src", "../images/icons/menu.svg" );
 			$( ".menu-toggle" ).fadeIn( "fast" );
 		});
 		
 		$( ".page-nav" ).animate({
+			// navigation goes up out of view
 			top:"-=" + navHeight
-			//top:"-=29vh"
 		}, 500, function() {
+			// unneccessary bounce effect lol
 			$( ".page-nav" ).animate({
 				top:"+=1vh"
 		}, 250, function() {
+		
+			// if going to new page
 			if( changePage ){
-				console.log( "dis is happening" );
+				//console.log( "dis is happening" );
 				
+				// if not going to home page
 				if( name != "home" ){
 					//window.location.href = "../html/" + name + ".html";
 					window.location.href = "../html/" + name + ".html";
 				}
+				// else go to index
 				else{
 					window.location.href = "../index.html";
 				}
@@ -77,8 +92,10 @@ $( document ).ready(function() {
 		}
 	});
 	
-	
+	/************************************/
 	/************** PAGES ***************/
+	/************************************/
+	
 	var page = function( name ){
 		return {
 			name: this.name, // page name
@@ -89,8 +106,6 @@ $( document ).ready(function() {
 			
 			goTo: function( curPage ) {
 				var name = this.getName();
-				
-				
 				
 				// remove active icon from previous page
 				$( "#" + name + "-nav" ).unbind( "click" ).click( function() {
@@ -118,25 +133,36 @@ $( document ).ready(function() {
 	pages.push( page( "contact" ) );
 	pages.push( page( "home" ) );
 	
+	// initialize each navigation page link
 	for( var i = 0; i < pages.length; i++ ){
 		pages[i].goTo( curPage );
 	}
 	
-	/********** INDEX NAV **********/
+	/************************************/
+	/************ INDEX NAV *************/
+	/************************************/
+	
+	// get height of main index page
 	mainHeight = $( "#main" ).height() + $( "#main" ).outerHeight() + $( "#main" ).innerHeight();
 	
-	
+	// go to page from index
 	function navGoTo( id ){
 		$( "#main #nav #" + id + "-nav" ).unbind( "click" ).click(function(){
-			console.log( "i am hurr" );
+			
+			// scroll to top
 			$( "html, body" ).animate({ scrollTop: 0 }, "fast", function() {
+				
+				// index page body slide up
 				$( "#main" ).animate({
-					//bottom:"+=100vh"
 					bottom:"+=" + mainHeight
 				}, 1500, function() {
+				
+					// index page is hidden
 					$( "#main" ).css( "display", "none" );
-					//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-					window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+					
+					// redirect to new page
+					window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 					curPage = id;
 				});
 			})
@@ -147,14 +173,10 @@ $( document ).ready(function() {
 	navGoTo( "about" );
 	navGoTo( "contact" );
 	
-	/********** PROJECTS **********/
-	var isMobile = function(){
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			return true;
-		}
-		else{ return false; }
-	}
 	
+	/************************************/
+	/************* PROJECTS *************/
+	/************************************/
 	
 	var project = function( title, idName ){
 		return {
@@ -187,6 +209,7 @@ $( document ).ready(function() {
 			hoverToggle: function(){
 				var id = this.getIdName();
 				
+				// if not mobile, show overlays upon hover
 				if( !isMobile() ){
 					$( "#" + id + "-thumb" )
 						.mouseenter(function(){ 
@@ -196,6 +219,7 @@ $( document ).ready(function() {
 							$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
 						});
 				}
+				// else show titles immediately
 				else{
 					$( ".thumb-overlay" ).css( "visibility", "hidden");
 					$( ".mobile-overlay" ).show();
@@ -206,6 +230,7 @@ $( document ).ready(function() {
 				var id = this.getIdName();
 				var obj = this;
 				
+				// hide nav and show project info
 				$( "#" + id + "-thumb" ).unbind( "click" ).click(function(){
 					$( "#projects" ).hide();
 					$( "#" + id + "-details" ).show();
@@ -220,6 +245,8 @@ $( document ).ready(function() {
 				var obj = this;
 			
 				$( "#" + id + "-back" ).unbind( "click" ).click(function(){
+					
+					// if navigation menu is open, close before going back
 					if( menuOn ){
 						closeMenu();
 					}
@@ -234,23 +261,27 @@ $( document ).ready(function() {
 			changeTitle: function( isViewing ){
 				if( isViewing ) { document.title = this.getTitle() + " | Joanne Arboleda"; }
 				else { document.title = "Works | Joanne Arboleda"; }
-			}
+			} // change title of page to name of project back and back to works
 		}
 	};
 	
+	// list of project objects
 	var projectList = [];
 	
 	projectList.push ( project( "Design Thinking Mobile App", "DT" ) );
 	projectList.push ( project( "Business Travel Mobile App", "TY" ) );
 	projectList.push ( project( "Food Delivery Web App", "MB" ) );
 	
+	// initialize project objects
 	for( var i = 0; i < projectList.length; i++ ){
 		projectList[i].hoverToggle();
 		projectList[i].displayToggle();
 		projectList[i].hideToggle();
 	}
 	
-	/************** IMAGE GALLERY ***************/
+	/************************************/
+	/*********** IMG GALLERY ************/
+	/************************************/
 	var galleryPic = function( title, idName ){
 		return {
 			title: this.title, // image title
@@ -310,12 +341,12 @@ $( document ).ready(function() {
 				$( "#" + id + "-desc" ).show();
 				$( "#current-img" ).attr( "src", src );
 				
-				if( index == 0 || index != len - 1 ){
+				/*if( index == 0 || index != len - 1 ){
 					$( "#next-arrow" ).show();
 				}
 				if( index != 0 || index == len - 1 ){
 					$( "#prev-arrow" ).show();
-				}
+				}*/
 				
 				$( ".img-desc" ).scrollTop( 0 );
 				
@@ -327,6 +358,7 @@ $( document ).ready(function() {
 					$( ".img-container" ).css( "height", "100%" );
 					$( ".img-desc" ).css( "overflow", "scroll" );
 					$( ".img-desc" ).css( "overflow-x", "hidden" );
+					$( ".desc-text" ).css( "margin-top", "1em" );
 					$( ".exit-viewer" ).css( "font-size", "1.5em" );
 					$( ".exit-viewer" ).css( "padding-left", "1px" );
 				}
@@ -334,7 +366,6 @@ $( document ).ready(function() {
 				// show viewer if not already on
 				if( !viewerOn ){
 					$( "#bg-overlay" ).show().fadeIn( "slow", function(){
-						//$( "body" ).height( $( "body" ).height() + ( $( ".img-container" ).height() * 1.10 ) );
 						$( ".img-container" ).slideToggle( "slow" );
 						$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast", function() {							
 							$( "body, html" ).css( "overflow", "hidden" );
@@ -342,7 +373,6 @@ $( document ).ready(function() {
 								 //prevent native touch activity like scrolling
 								 e.preventDefault(); 
 							});
-							//$( "body, html" ).css( "height", "100%" );
 						});
 					});
 				}
@@ -352,8 +382,6 @@ $( document ).ready(function() {
 				var id = this.getIdName();
 				
 				$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
-				//$( "#next-img" ).hide();
-				//$( "#prev-img" ).hide();
 				$( "#bg-overlay" ).hide();
 				$( ".img-desc" ).hide();
 				
@@ -361,7 +389,6 @@ $( document ).ready(function() {
 				if( viewerOn ){
 					$( "body, html" ).css( "overflow", "auto" );
 					$( "body, html" ).css( "height", "auto" );
-					//$( "body" ).height( $( "body" ).height() - ( $( ".img-container" ).height() * 1.10 ) );
 					$( ".img-container" ).slideToggle( "slow" );
 				}
 			}, // hide image
@@ -384,6 +411,7 @@ $( document ).ready(function() {
 		}
 	};
 	
+	// gallery object
 	var gallery = function(){
 		return{
 			imgList: [],
@@ -391,12 +419,12 @@ $( document ).ready(function() {
 			
 			getList: function(){
 				return this.imgList;
-			},
+			}, 
 			
 			addImg: function( pic ){
 				var list = this.getList();
 				list.push( pic );
-			},
+			}, // add image to gallery
 			
 			initialize: function(){
 				var obj = this;
@@ -413,10 +441,10 @@ $( document ).ready(function() {
 		}
 	};	
 	
-	// Initializing new gallery
+	// initializing new gallery
 	imgGallery = new gallery();
 	
-	// Initializing gallery images
+	// initializing gallery images
 	imgGallery.addImg( galleryPic( "<em>Legend of Zelda</em>-Inspired Card", "card" ) ); // Zelda card, 0
 	imgGallery.addImg( galleryPic( "<em>Adventure Time</em> Lich Poster", "lich" ) ); // Lich poster, 1
 	imgGallery.addImg( galleryPic( "Scarf Girl Illustration", "scarf" ) ); // Scarf girl illustration, 2

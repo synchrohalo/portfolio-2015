@@ -1,4 +1,7 @@
-/************** MAIN **************/
+/********************************************/
+/******************* MAIN *******************/
+/********************************************/
+
 body{
 	margin:0 auto;
 	padding:0;
@@ -12,6 +15,10 @@ body{
 img{
 	margin:0 auto;
 	max-width:100%;
+}
+
+.uppercase{
+	text-transform:uppercase;
 }
 
 a{
@@ -29,17 +36,15 @@ a:hover{
 	color:#355677;
 }
 
-#main a:hover{
-}
-
+/* self portrait on home page */
 #self-portrait{
 	width:50%;
 	margin-top:2%;
-	/*margin-top:-1.25em;*/
 	min-width:20em;
 	max-width:25em;
 }
 
+/* description after title */
 #short-description{
 	margin:0 auto;
 	font-size:1.1em;
@@ -47,14 +52,14 @@ a:hover{
 	letter-spacing:0.025em;
 	margin-top:-2.5em;
 	margin-bottom:1.5em;
-	/*margin-top:0;*/
 	padding:0.25em;
 	width:25%;
 	line-height:150%;
 	letter-spacing:0.05em;
 }
 
-#main {
+/* home page style */
+#main{
 	margin:0 auto;
 	padding:0;
 	position:relative;
@@ -69,6 +74,7 @@ a:hover{
     box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
 }
 
+/* home page title */
 #main .page-title{
 	color:#355677;
 	font-size:2.5em;
@@ -76,7 +82,9 @@ a:hover{
 	margin-top:-0.5em;
 }
 
+/* general navigation */
 #nav{
+	text-align:center;
 	list-style-type:none;
 	text-transform:uppercase;
 	letter-spacing:0.075em;
@@ -84,6 +92,7 @@ a:hover{
 	font-size:0.9em;
 }
 
+/* individual icons */
 #nav li{
 	margin-left:1.25em;
 	margin-right:1.25em;
@@ -104,6 +113,7 @@ a:hover{
 	background-color:#4f6b88;
 }
 
+/* icon to toggle menu */
 .menu-toggle{
 	position:fixed;
 	top:2vh;
@@ -119,6 +129,7 @@ a:hover{
 	width:2em;
 }
 
+/* navigation for pages */
 .page-nav{
 	position:fixed;
 	left:0%;
@@ -135,6 +146,7 @@ a:hover{
 	padding-bottom:10vh;
 }
 
+/* individual page navigation icons */
 #nav.page-nav li{
 	background-color:#4f6b88;
 	height:10vw;
@@ -150,21 +162,18 @@ a:hover{
 	color:#c6839a;
 }
 
+/* current page is highlighted */
 #nav.page-nav .cur-page{
 	background-color:#355677;
 	color:#c6839a;
 }
 
+/* encapsulates all page content to easily adjust positioning */
 .page-content{
 	margin-top:10vh;
 }
 
-.line-break{
-	margin-top:-0.5em;
-	border-bottom:1px solid #929292;
-	margin-bottom:1em;
-}
-
+/* vertically center most things */
 .vertical{
 	position:relative;
 	top:50%;
@@ -172,14 +181,7 @@ a:hover{
 	-webkit-transform:translateY(-50%);
 }
 
-#main .vertical{
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
-	-webkit-transform:translate(-50%,-50%);
-}
-
+/* any title on a page */
 .page-title{
 	font-family:'Slabo 27px',serif;
 	text-align:center;
@@ -188,8 +190,8 @@ a:hover{
 	letter-spacing:0.075em;
 }
 
+/* subtitle */
 .page-subtitle{
-	/*margin-top:-1.25em;*/
 	text-transform:none;
 	color:#777;
 	font-size:1.5em;
@@ -199,12 +201,18 @@ h6{
 	font-size:1.5em;
 }
 
-/********** WORKS **********/
-
-#works{
-	text-align:center;
+/* text body in pages */
+.text-body{
+	margin:0 auto;
+	width:75%;
+	margin-bottom:3em;
 }
 
+/********************************************/
+/******************* WORKS ******************/
+/********************************************/
+
+/* list of works */
 #projects-list{
 	text-align:center;
 	list-style-type:none;
@@ -226,14 +234,17 @@ h6{
 	background-color:#999;
 }
 
+/* misc works (not projects) title */
 #misc{
 	margin-top:1.25em;
 }
 
+/* thumbnail images */
 .thumbnail{
 	background-size:cover;
 }
 
+/* overlay that shows titles */
 .thumb-overlay{
 	display:none;
 	position:absolute;
@@ -251,6 +262,7 @@ h6{
 	font-size:0.9em;
 }
 
+/* overlay that pops up on mobile so no hover is required */
 .mobile-overlay{
 	display:none;
 	color:#fff;
@@ -264,6 +276,7 @@ h6{
 	opacity:0.9;
 }
 
+/* image URLs for individual works */
 #DT-thumb{
 	background-image:url("../images/thumbnails/greyscale/thumb-DT.png");
 }
@@ -292,8 +305,12 @@ h6{
 	background-image:url("../images/thumbnails/greyscale/thumb-scarf.png");
 }
 
-/********** PROJECT DETAILS **********/
 
+/********************************************/
+/************** PROJECT DETAILS *************/
+/********************************************/
+
+/* banner for projects */
 .banner{
 	display:none;
 	height:40vh;
@@ -305,6 +322,7 @@ h6{
 	margin-bottom:1em;
 }
 
+/* individual img URLs for each project banner */
 #DT-banner{
 	background-image:url("../images/design-thinking/collage.jpg");
 }
@@ -317,23 +335,20 @@ h6{
 	background-image:url("../images/food-delivery/collage.jpg");
 }
 
+/* project information */
 .project-details{
 	display:none;
 	margin-top:2em;
 }
 
-.text-body{
-	margin:0 auto;
-	width:75%;
-	margin-bottom:3em;
-}
-
+/* project header */
 .header{
 	font-size:1.5em;
 	text-align:center;
 	margin-top:-1em;
 }
 
+/* project back button */
 .back{
 	width:5em;
 	position:fixed;
@@ -342,49 +357,49 @@ h6{
 	font-weight:bold;
 }
 
+/* img used in project description */
 .project-img{
 	margin:0 auto;
 	width:90%;
 	text-align:center;
 }
 
+/* wider imgs */
 .wide-img{
 	width:100%;
 	max-width:35em;
 }
 
+/* mobile screens */
 .mobile-img {
 	max-width:14em;
 	margin:1em;
 }
 
+/* smaller mobile screens */
 .small-mobile-img{
 	max-width:11em;
 	margin:0.3em;
 }
 
-.indented{
-	margin-left:2em;
-}
-
-.uppercase{
-	text-transform:uppercase;
-}
-
+/* labels used for img descriptions on project overview */
 .small-label{
 	letter-spacing:0.05em;
 	color:#777;
 }
 
+/* img descriptions */
 .small-description{
 	margin-top:-1.75em;
 }
 
+/* titles within project descriptions */
 .sub-title{
 	margin-top:2em;
 	margin-bottom:0em;
 }
 
+/* encapsulates entire img description */
 .caption{
 	margin:0 auto;
 	margin-bottom:3em;
@@ -397,34 +412,11 @@ h6{
 	line-height:1.5em;
 }
 
-#img-viewer{
-	display:none;
-	position:fixed;
-	top:0;
-	left:0;
-	z-index:5;
-	height:100vh;
-	width:100vw;
-}
+/********************************************/
+/**************** IMG VIEWER ****************/
+/********************************************/
 
-.lightbox-overlay{
-	position:fixed;
-	top:0;
-	left:0;
-	height:100vh;
-	width:100vw;
-	background-color:#000;
-	opacity:0.75;
-}
-
-.lightbox-img{
-	z-index:6;
-	position:fixed;
-	top:15%;
-	left:40vw;
-	max-width:25em;
-}
-
+/* white overlay that allows you to exit out of viewer */
 #bg-overlay{
 	display:none;
 	position:fixed;
@@ -437,6 +429,7 @@ h6{
 	opacity:0.75;
 }
 
+/* illustration & graphic viewer */
 .img-container{
 	display:none;
 	z-index:9;
@@ -450,6 +443,7 @@ h6{
     box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
 }
 
+/* transparent overlay on which img appears */
 .img-bg{
 	height:100%;
 	width:50vw;
@@ -458,6 +452,7 @@ h6{
 	opacity:0.25;
 }
 
+/* div that contains img */
 .img-side{
 	height:100%;
 	width:50%;
@@ -466,6 +461,7 @@ h6{
 	left:0;
 }
 
+/* img that is currently being viewed */
 #current-img{
 	height:80%;
 	position:absolute;
@@ -475,6 +471,7 @@ h6{
 	-webkit-transform:translate(-50%, -50%);
 }
 
+/* img description */
 .img-desc{
 	display:none;
 	text-align:center;
@@ -503,10 +500,16 @@ h6{
 .img-desc p{
 	text-align:left;
 	margin:0 auto;
-	width:75%;
 	margin-top:1em;
 }
 
+.desc-text{
+	margin:0 auto;
+	margin-top:3em;
+	width:90%;
+}
+
+/* X button to close viewer */
 .exit-viewer{
 	position:absolute;
 	top:5%;
@@ -528,15 +531,8 @@ h6{
 	cursor:pointer;
 }
 
+/* separate styling for portrait view on touch devices */
 @media screen and (orientation:portrait){
-
-	#main .page-title{
-		/*padding-top:20%;*/
-	}
-
-	#self-portrait{
-		/*margin-top:20%;*/
-	}
 	
 	#short-description{
 		width:80%;
@@ -592,6 +588,12 @@ h6{
 		overflow-x:hidden;
 	}
 	
+	.desc-text{
+		margin:0 auto;
+		width:75%;
+		margin-bottom:1em;
+	}
+	
 	.exit-viewer{
 		font-size:1.5em;
 		top:2%;
@@ -599,7 +601,7 @@ h6{
 	
 }
 
-.img-arrows{
+/*.img-arrows{
 	font-size:2em;
 	background-color:#fff;
 	color:#aa6b7d;
@@ -626,3 +628,32 @@ h6{
 	left:52.5%;
 	bottom:50%;
 }
+
+/* lightbox (UNUSED) */
+/*.lightbox-overlay{
+	position:fixed;
+	top:0;
+	left:0;
+	height:100vh;
+	width:100vw;
+	background-color:#000;
+	opacity:0.75;
+}
+
+.lightbox-img{
+	z-index:6;
+	position:fixed;
+	top:15%;
+	left:40vw;
+	max-width:25em;
+}
+
+#img-viewer{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	height:100vh;
+	width:100vw;
+}*/
