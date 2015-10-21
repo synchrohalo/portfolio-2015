@@ -279,6 +279,18 @@ $( document ).ready(function() {
 		projectList[i].hideToggle();
 	}
 	
+	// initialize gif playing in DT project
+	var playGifReady = function(){
+		$( ".gif-play" ).click( function(){
+				var id = $( this ).attr( "id" );
+				console.log( id );
+				
+				$( this ).attr( "src", "../images/design-thinking/" + id + ".gif" );
+		});
+	}
+	
+	playGifReady();
+	
 	/************************************/
 	/*********** IMG GALLERY ************/
 	/************************************/
