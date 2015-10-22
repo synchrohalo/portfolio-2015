@@ -161,8 +161,8 @@ $( document ).ready(function() {
 					$( "#main" ).css( "display", "none" );
 					
 					// redirect to new page
-					//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-					window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+					window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 					curPage = id;
 				});
 			})
@@ -271,6 +271,7 @@ $( document ).ready(function() {
 	projectList.push ( project( "Design Thinking Mobile App", "DT" ) );
 	projectList.push ( project( "Business Travel Mobile App", "TY" ) );
 	projectList.push ( project( "Food Delivery Web App", "MB" ) );
+	projectList.push ( project( "Davis Computer Science Club", "CS" ) );
 	
 	// initialize project objects
 	for( var i = 0; i < projectList.length; i++ ){

@@ -289,6 +289,10 @@ h6{
 	background-image:url("../images/thumbnails/greyscale/thumb-MB.png");
 }
 
+#CS-thumb{
+	background-image:url("../images/thumbnails/greyscale/thumb-CS.png");
+}
+
 #card-thumb{
 	background-image:url("../images/thumbnails/greyscale/thumb-card.png");
 }
@@ -335,6 +339,11 @@ h6{
 	background-image:url("../images/food-delivery/collage.jpg");
 }
 
+#CS-banner{
+	background-image:url("../images/cs-club/collage.png");
+	background-size:100%;
+}
+
 /* project information */
 .project-details{
 	display:none;
@@ -368,6 +377,11 @@ h6{
 .wide-img{
 	width:100%;
 	max-width:35em;
+}
+
+.widest-img{
+	width:100%;
+	max-width:45em;
 }
 
 /* mobile screens */
