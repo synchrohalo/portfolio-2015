@@ -13,4 +13,5 @@
 	<li>put images in <em>contact</em> and <em>about</em> pages to make them look less boring</li>
 	<li>more info on <em>contact</em> and <em>about</em> pages</li>
 	<li>moar sunflowers (maybe)</li>
+	<li>add captions to images (for accessibility purposes)</li>
 </ul>
