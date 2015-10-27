@@ -22,7 +22,7 @@ $( document ).ready(function() {
 	//$( ".page-nav" ).css( "top", -$( ".page-nav" ).height() - $( ".page-nav" ).outerHeight());
 	
 	// page content placed depending on height of nav bar
-	$( ".page-content" ).css( "margin-top", $( ".page-nav" ).height() + 50 );
+	$( ".page-content" ).css( "margin-top", $( ".page-nav" ).height() + 60 );
 	
 	// a check if menu is (navigation) on
 	var menuOn = false;
