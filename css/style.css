@@ -38,10 +38,8 @@ a:hover{
 
 /* self portrait on home page */
 #self-portrait{
-	width:50%;
+	height:50vh;
 	margin-top:2%;
-	min-width:20em;
-	max-width:25em;
 }
 
 /* description after title */
@@ -98,8 +96,8 @@ a:hover{
 	margin-right:1.25em;
 	font-size:0.9em;
 	background-color:#355677;
-	height:7vw;
-	width:7vw;
+	height:10vh;
+	width:10vh;
 	border-radius:100%;
 	text-align:center;
 	display:inline-block;
@@ -115,6 +113,7 @@ a:hover{
 
 /* icon to toggle menu */
 .menu-toggle{
+	display:none;
 	position:fixed;
 	top:2vh;
 	right:2vw;
@@ -133,8 +132,9 @@ a:hover{
 .page-nav{
 	position:fixed;
 	left:0%;
-	background-color:#4f6b88;
-	min-height:15vh;
+	/*background-color:#4f6b88;*/
+	background-color:#fff;
+	min-height:7vh;
 	height:auto;
 	width:100vw;
 	z-index:7;
@@ -142,15 +142,16 @@ a:hover{
 	-moz-box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
     box-shadow:0em 0em 1em 0.05em rgba(0, 0, 0, 0.25);
 	overflow:visible;
-	padding-top:10vh;
-	padding-bottom:10vh;
+	padding-top:2vh;
+	padding-bottom:2vh;
+	opacity:0.95;
 }
 
 /* individual page navigation icons */
 #nav.page-nav li{
 	background-color:#4f6b88;
-	height:10vw;
-	width:10vw;
+	height:5vh;
+	width:5vh;
 }
 
 #nav.page-nav a{
@@ -170,7 +171,7 @@ a:hover{
 
 /* encapsulates all page content to easily adjust positioning */
 .page-content{
-	margin-top:10vh;
+	/*margin-top:16vh;*/
 }
 
 /* vertically center most things */
@@ -322,7 +323,9 @@ h6{
 	width:100%;
 	background-attachment:fixed;
 	background-size:cover;
-	margin-top:0vh;
+	margin:0;
+	padding:0;
+	margin-top:-2vh;
 	margin-bottom:1em;
 }
 

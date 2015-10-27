@@ -19,7 +19,10 @@ $( document ).ready(function() {
 	navHeight = $( ".page-nav" ).height() + $( ".page-nav" ).outerHeight();
 	
 	// navigation initialized to be hidden at top of page
-	$( ".page-nav" ).css( "top", -$( ".page-nav" ).height() - $( ".page-nav" ).outerHeight());
+	//$( ".page-nav" ).css( "top", -$( ".page-nav" ).height() - $( ".page-nav" ).outerHeight());
+	
+	// page content placed depending on height of nav bar
+	$( ".page-content" ).css( "margin-top", $( ".page-nav" ).height() + 50 );
 	
 	// a check if menu is (navigation) on
 	var menuOn = false;
@@ -115,10 +118,20 @@ $( document ).ready(function() {
 					$( "#" + name + "-nav li" ).addClass( "cur-page" );
 					
 					// scroll menu back up
-					closeMenu( true, name );
+					//closeMenu( true, name );
 					
 					// go to page
 					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+						
+					// if not going to home page
+					if( name != "home" ){
+						//window.location.href = "../html/" + name + ".html";
+						window.location.href = "../html/" + name + ".html";
+					}
+					// else go to index
+					else{
+						window.location.href = "../index.html";
+					}
 				
 					// change curPage variable
 					curPage = name;
@@ -149,8 +162,13 @@ $( document ).ready(function() {
 	function navGoTo( id ){
 		$( "#main #nav #" + id + "-nav" ).unbind( "click" ).click(function(){
 			
+			// redirect to new page
+			//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+			window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+			curPage = id;
+			
 			// scroll to top
-			$( "html, body" ).animate({ scrollTop: 0 }, "fast", function() {
+			/*$( "html, body" ).animate({ scrollTop: 0 }, "fast", function() {
 				
 				// index page body slide up
 				$( "#main" ).animate({
@@ -161,11 +179,11 @@ $( document ).ready(function() {
 					$( "#main" ).css( "display", "none" );
 					
 					// redirect to new page
-					//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-					window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+					window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+					//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 					curPage = id;
 				});
-			})
+			})*/
 		});
 	}
 	
@@ -183,6 +201,7 @@ $( document ).ready(function() {
 			title: this.title, // image title
 			idName: this.idName, // id name
 			imgList: [], // list of images used on page
+			scrollPos: null,
 			
 			getTitle: function(){
 				return title;
@@ -230,6 +249,8 @@ $( document ).ready(function() {
 				var id = this.getIdName();
 				var obj = this;
 				
+				scrollPos = $( "body" ).scrollTop();
+				
 				// hide nav and show project info
 				$( "#" + id + "-thumb" ).unbind( "click" ).click(function(){
 					$( "#projects" ).hide();
@@ -247,9 +268,11 @@ $( document ).ready(function() {
 				$( "#" + id + "-back" ).unbind( "click" ).click(function(){
 					
 					// if navigation menu is open, close before going back
-					if( menuOn ){
+					/*if( menuOn ){
 						closeMenu();
-					}
+					}*/
+				
+					$( "body ").scrollTop( scrollPos );
 				
 					$( "#" + id + "-details" ).hide();
 					$( "#" + id + "-banner" ).hide();
@@ -403,6 +426,7 @@ $( document ).ready(function() {
 					$( "body, html" ).css( "overflow", "auto" );
 					$( "body, html" ).css( "height", "auto" );
 					$( ".img-container" ).slideToggle( "slow" );
+					$( "div.img-desc" ).scrollTop( 0 );
 				}
 			}, // hide image
 			
