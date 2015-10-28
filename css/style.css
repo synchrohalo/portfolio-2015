@@ -38,7 +38,7 @@ a:hover{
 
 /* self portrait on home page */
 #self-portrait{
-	min-height:10em;
+	min-height:25em;
 	max-height:50vh;
 	margin-top:2%;
 }
