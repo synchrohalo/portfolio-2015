@@ -100,8 +100,6 @@ a:hover{
 	margin-right:1.25em;
 	font-size:0.9em;
 	background-color:#355677;
-	height:10vh;
-	width:10vh;
 	border-radius:100%;
 	text-align:center;
 	display:inline-block;
@@ -109,6 +107,14 @@ a:hover{
 	min-width:5em;
 	max-width:7em;
 	max-height:7em;
+}
+
+#nav li img{
+	min-height:5em;
+	min-width:5em;
+	max-width:7em;
+	max-height:7em;
+	height:auto !important;
 }
 
 #nav li:hover{
@@ -156,6 +162,12 @@ a:hover{
 	height:5vh;
 	width:5vh;
 	color:#999;
+}
+
+#nav.page-nav li img{
+	height:5vh;
+	width:5vh;
+	height:auto !important;
 }
 
 #nav.page-nav a{
