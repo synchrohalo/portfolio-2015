@@ -395,6 +395,9 @@ $( document ).ready(function() {
 					$( ".img-desc" ).css( "overflow", "scroll" );
 					$( ".img-desc" ).css( "overflow-x", "hidden" );
 					$( ".desc-text" ).css( "margin-top", "1em" );
+					$( ".exit-viewer" ).css( "height", "0.9em" );
+					$( ".exit-viewer" ).css( "width", "0.9em" );
+					//$( ".exit-viewer" ).css( "line-height", "0.75em" );
 					//$( ".exit-viewer" ).css( "font-size", "1.5em" );
 					//$( ".exit-viewer" ).css( "padding-left", "1px" );
 				}
