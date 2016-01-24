@@ -39,7 +39,7 @@ a:hover{
 
 /* self portrait on home page */
 #self-portrait{
-	min-height:25em;
+	min-height:30em;
 	max-height:50vh;
 	margin-top:2%;
 }
@@ -56,7 +56,7 @@ a:hover{
 	min-width:20em;
 	width:25%;
 	line-height:150%;
-	letter-spacing:0.05em;
+	letter-spacing:0.1em;
 }
 
 /* home page style */
@@ -548,12 +548,13 @@ a:hover{
 	position:absolute;
 	top:5%;
 	right:1%;
-	height:0.9em;
-	width:0.9em;
+	height:1em;
+	width:1em;
 	color:#000;
 	font-size:2em;
-	padding:.1em;
 	font-weight:bold;
+	line-height:0.9em;
+	letter-spacing:0;
 	background-color:#fff;
 	z-index:7;
 	text-align:center;
