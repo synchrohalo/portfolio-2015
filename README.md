@@ -7,11 +7,11 @@
 <h3>TO-DO</h3>
 
 <ul>
+	<li>edit/proofread ALL TEXT</li>
 	<li>add a web form for contacting (maybe)</li>
 	<li>nav icons change slightly on hover</li>
 	<li>put images in <em>contact</em> and <em>about</em> pages to make them look less boring</li>
 	<li>more info on <em>contact</em> and <em>about</em> pages</li>
-	<li>moar sunflowers (maybe)</li>
 	<li>add captions to images (for accessibility purposes)</li>
 	<li>image description scroll position goes back to top after closing it</li>
 </ul>
