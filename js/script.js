@@ -163,8 +163,8 @@ $( document ).ready(function() {
 		$( "#main #nav #" + id + "-nav" ).unbind( "click" ).click(function(){
 			
 			// redirect to new page
-			//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-			window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+			window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+			//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 			curPage = id;
 			
 			// scroll to top
@@ -395,8 +395,8 @@ $( document ).ready(function() {
 					$( ".img-desc" ).css( "overflow", "scroll" );
 					$( ".img-desc" ).css( "overflow-x", "hidden" );
 					$( ".desc-text" ).css( "margin-top", "1em" );
-					$( ".exit-viewer" ).css( "font-size", "1.5em" );
-					$( ".exit-viewer" ).css( "padding-left", "1px" );
+					//$( ".exit-viewer" ).css( "font-size", "1.5em" );
+					//$( ".exit-viewer" ).css( "padding-left", "1px" );
 				}
 				
 				// show viewer if not already on
