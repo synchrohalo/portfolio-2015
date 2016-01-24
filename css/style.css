@@ -5,11 +5,12 @@
 body{
 	margin:0 auto;
 	padding:0;
-	font-family:"Quicksand",sans-serif;
-	font-size:1.375em;
+	font-family:'Varela Round',sans-serif;
+	font-size:1.25em;
+	letter-spacing:0.05em;
 	height:100%;
 	width:100%;
-	color:#999;
+	color:#BBB;
 }
 
 img{
@@ -201,6 +202,7 @@ a:hover{
 /* any title on a page */
 .page-title{
 	font-family:'Slabo 27px',serif;
+	font-size:1.75em;
 	text-align:center;
 	text-transform:uppercase;
 	color:#555;
@@ -211,11 +213,6 @@ a:hover{
 .page-subtitle{
 	text-transform:none;
 	color:#777;
-	font-size:1.5em;
-}
-
-h6{
-	font-size:1.5em;
 }
 
 /* text body in pages */
@@ -550,11 +547,12 @@ h6{
 .exit-viewer{
 	position:absolute;
 	top:5%;
-	right:2%;
-	height:1em;
-	width:1em;
+	right:1%;
+	height:0.9em;
+	width:0.9em;
 	color:#000;
 	font-size:2em;
+	padding:.1em;
 	font-weight:bold;
 	background-color:#fff;
 	z-index:7;
