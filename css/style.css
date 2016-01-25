@@ -222,6 +222,14 @@ a:hover{
 	margin-bottom:3em;
 }
 
+#contact-list{
+	list-style-type:lower-alpha;
+	padding-left:10%;
+	margin-top:-1em;
+	margin-bottom:2em;
+	line-height:75%;
+}
+
 /********************************************/
 /******************* WORKS ******************/
 /********************************************/
