@@ -21,6 +21,102 @@ $( document ).ready(function() {
 	// navigation initialized to be hidden at top of page
 	//$( ".page-nav" ).css( "top", -$( ".page-nav" ).height() - $( ".page-nav" ).outerHeight());
 	
+	/************************************/
+	/************ NAVIGATION ************/
+	/************************************/
+	
+	// clean up code pls
+	
+	$( "#works-nav" ).hover(
+		function() {
+			if( curPage == "index" ) {
+				$( "#works-nav img" ).attr("src", "images/icons/works-hover.svg");
+			}
+			else {
+				$( "#works-nav img" ).attr("src", "../images/icons/works-hover.svg");
+			}
+		}, function() {
+			if( curPage == "index" ) {
+				$( "#works-nav img" ).attr("src", "images/icons/works.svg");
+			}
+			else {
+				$( "#works-nav img" ).attr("src", "../images/icons/works.svg");
+			}
+		}
+	);
+	
+	$( "#about-nav" ).hover(
+		function() {
+			if( curPage == "index" ) {
+				$( "#about-nav img" ).attr("src", "images/icons/about-hover.svg");
+			}
+			else {
+				$( "#about-nav img" ).attr("src", "../images/icons/about-hover.svg");
+			}
+		}, function() {
+			if( curPage == "index" ) {
+				$( "#about-nav img" ).attr("src", "images/icons/about.svg");
+			}
+			else {
+				$( "#about-nav img" ).attr("src", "../images/icons/about.svg");
+			}
+		}
+	);
+	
+	$( "#contact-nav" ).hover(
+		function() {
+			if( curPage == "index" ) {
+				$( "#contact-nav img" ).attr("src", "images/icons/contact-hover.svg");
+			}
+			else {
+				$( "#contact-nav img" ).attr("src", "../images/icons/contact-hover.svg");
+			}
+		}, function() {
+			if( curPage == "index" ) {
+				$( "#contact-nav img" ).attr("src", "images/icons/contact.svg");
+			}
+			else {
+				$( "#contact-nav img" ).attr("src", "../images/icons/contact.svg");
+			}
+		}
+	);
+	
+	$( "#home-nav" ).hover(
+		function() {
+			if( curPage == "index" ) {
+				$( "#home-nav img" ).attr("src", "images/icons/home-hover.svg");
+			}
+			else {
+				$( "#home-nav img" ).attr("src", "../images/icons/home-hover.svg");
+			}
+		}, function() {
+			if( curPage == "index" ) {
+				$( "#home-nav img" ).attr("src", "images/icons/home.svg");
+			}
+			else {
+				$( "#home-nav img" ).attr("src", "../images/icons/home.svg");
+			}
+		}
+	);
+	
+	$( "#index-nav" ).hover(
+		function() {
+			if( curPage == "index" ) {
+				$( "#index-nav img" ).attr("src", "images/icons/home-hover.svg");
+			}
+			else {
+				$( "#index-nav img" ).attr("src", "../images/icons/home-hover.svg");
+			}
+		}, function() {
+			if( curPage == "index" ) {
+				$( "#index-nav img" ).attr("src", "images/icons/home.svg");
+			}
+			else {
+				$( "#index-nav img" ).attr("src", "../images/icons/home.svg");
+			}
+		}
+	);
+	
 	// page content placed depending on height of nav bar
 	$( ".page-content" ).css( "margin-top", $( ".page-nav" ).height() + 60 );
 	
