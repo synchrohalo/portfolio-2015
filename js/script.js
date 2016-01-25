@@ -163,8 +163,8 @@ $( document ).ready(function() {
 		$( "#main #nav #" + id + "-nav" ).unbind( "click" ).click(function(){
 			
 			// redirect to new page
-			window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
-			//window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
+			//window.location.href = "../Portfolio 2015/html/" + id + ".html"; // testing locally
+			window.location.href = "../html/" + id + ".html"; // when pushing to GitHub
 			curPage = id;
 			
 			// scroll to top
