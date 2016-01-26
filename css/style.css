@@ -222,12 +222,12 @@ a:hover{
 	margin-bottom:3em;
 }
 
+/* list of reasons to contact me */
 #contact-list{
 	list-style-type:lower-alpha;
 	padding-left:10%;
 	margin-top:-1em;
 	margin-bottom:2em;
-	line-height:75%;
 }
 
 /********************************************/
