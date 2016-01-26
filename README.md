@@ -13,4 +13,5 @@
 	<li>more info on <em>contact</em> and <em>about</em> pages</li>
 	<li>add captions to images (for accessibility purposes)</li>
 	<li>image description scroll position goes back to top after closing it</li>
+	<li>remove URL changing from script.js and do in .html files</li>
 </ul>
