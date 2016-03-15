@@ -124,7 +124,7 @@ $( document ).ready(function() {
 	var menuOn = false;
 	
 	// open menu (navigation)
-	var openMenu = function() {
+	/*var openMenu = function() {
 		$( ".menu-toggle" ).fadeOut( "fast", function() {
 				// toggle becomes white when menu is open
 				$( ".menu-toggle img" ).attr( "src", "../images/icons/menu-white.svg" );
@@ -189,13 +189,13 @@ $( document ).ready(function() {
 		else{
 			closeMenu( false, null );
 		}
-	});
+	});*/
 	
 	/************************************/
 	/************** PAGES ***************/
 	/************************************/
 	
-	var page = function( name ){
+	/*var page = function( name ){
 		return {
 			name: this.name, // page name
 			
@@ -245,14 +245,14 @@ $( document ).ready(function() {
 	// initialize each navigation page link
 	for( var i = 0; i < pages.length; i++ ){
 		pages[i].goTo( curPage );
-	}
+	}*/
 	
 	/************************************/
 	/************ INDEX NAV *************/
 	/************************************/
 	
 	// get height of main index page
-	mainHeight = $( "#main" ).height() + $( "#main" ).outerHeight() + $( "#main" ).innerHeight();
+	/*mainHeight = $( "#main" ).height() + $( "#main" ).outerHeight() + $( "#main" ).innerHeight();
 	
 	// go to page from index
 	function navGoTo( id ){
@@ -280,12 +280,12 @@ $( document ).ready(function() {
 					curPage = id;
 				});
 			})*/
-		});
+		/*});
 	}
 	
 	navGoTo( "works" );
 	navGoTo( "about" );
-	navGoTo( "contact" );
+	navGoTo( "contact" );*/
 	
 	
 	/************************************/
