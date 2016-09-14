@@ -11,6 +11,7 @@ body{
 	height:100%;
 	width:100%;
 	color:#BBB;
+    overflow-x:hidden;
 }
 
 img{
@@ -299,6 +300,10 @@ a:hover{
 }
 
 /* image URLs for individual works */
+#TM-thumb{
+	background-image:url("../images/thumbnails/greyscale/thumb-TM.png");
+}
+
 #DT-thumb{
 	background-image:url("../images/thumbnails/greyscale/thumb-DT.png");
 }
@@ -331,6 +336,18 @@ a:hover{
 	background-image:url("../images/thumbnails/greyscale/thumb-scarf.png");
 }
 
+#christmas-thumb{
+	background-image:url("../images/thumbnails/greyscale/thumb-christmas.png");
+}
+
+#day31-thumb{
+	background-image:url("../images/thumbnails/greyscale/thumb-day31.png");
+}
+
+#food-gifs-thumb{
+	background-image:url("../images/thumbnails/greyscale/thumb-food-gif.png");
+}
+
 
 /********************************************/
 /************** PROJECT DETAILS *************/
@@ -351,6 +368,10 @@ a:hover{
 }
 
 /* individual img URLs for each project banner */
+#TM-banner{
+	background-image:url("../images/tagmonkey/collage.jpg");
+}
+
 #DT-banner{
 	background-image:url("../images/design-thinking/collage.jpg");
 }
@@ -434,7 +455,7 @@ a:hover{
 /* titles within project descriptions */
 .sub-title{
 	margin-top:2em;
-	margin-bottom:0em;
+	margin-bottom:1em;
 }
 
 /* encapsulates entire img description */
@@ -483,6 +504,15 @@ a:hover{
 	-webkit-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
 	-moz-box-shadow:0px -10px 50px 5px rgba(0, 0, 0, 0.9);
     box-shadow:0em 0em 3em 0.05em rgba(0, 0, 0, 0.5);
+}
+
+/* links in img container */
+.img-container a{
+    color:#355677;
+}
+
+.img-container a:hover{
+    color:#c6839a;
 }
 
 /* transparent overlay on which img appears */
