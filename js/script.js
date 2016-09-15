@@ -387,6 +387,7 @@ $( document ).ready(function() {
 	// list of project objects
 	var projectList = [];
 	
+	projectList.push ( project( "TagMonkey Website & App", "TM" ) );
 	projectList.push ( project( "Design Thinking Mobile App", "DT" ) );
 	projectList.push ( project( "Business Travel Mobile App", "TY" ) );
 	projectList.push ( project( "Food Delivery Web App", "MB" ) );
@@ -429,7 +430,13 @@ $( document ).ready(function() {
 			}, // get id name
 			
 			getSrc: function(){
-				return "../images/illustrations/" + this.getIdName() + ".png";
+                var srcName;
+				if( this.getIdName() != "day31" && this.getIdName() != "food-gifs" )
+                    srcName = "../images/illustrations/" + this.getIdName() + ".png";
+                else
+                    srcName = "../images/illustrations/" + this.getIdName() + ".gif";
+                
+                return srcName;
 			}, // get image URL
 			
 			getIndex: function(){
@@ -465,13 +472,15 @@ $( document ).ready(function() {
 				}
 			}, // hovering over thumbnails
 			
-			display: function( viewerOn, len ){
+			display: function(){
 				var id = this.getIdName();
 				var src = this.getSrc();
-				var index = this.getIndex();
+				//var index = this.getIndex();
 				
 				$( "#" + id + "-desc" ).show();
 				$( "#current-img" ).attr( "src", src );
+
+				//console.log( this.getIndex() );
 				
 				/*if( index == 0 || index != len - 1 ){
 					$( "#next-arrow" ).show();
@@ -499,7 +508,7 @@ $( document ).ready(function() {
 				}
 				
 				// show viewer if not already on
-				if( !viewerOn ){
+				//if( !viewerOn ){
 					$( "#bg-overlay" ).show().fadeIn( "slow", function(){
 						$( ".img-container" ).slideToggle( "slow" );
 						$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast", function() {							
@@ -510,38 +519,38 @@ $( document ).ready(function() {
 							});
 						});
 					});
-				}
+				//}
 			}, // display image in viewer
 			
-			hide: function( viewerOn ){
+			hide: function(){
 				var id = this.getIdName();
 				
-				$( "#" + id + "-overlay" ).css( "visibility", "hidden" );
 				$( "#bg-overlay" ).hide();
 				$( ".img-desc" ).hide();
 				
 				// hide viewer if not already off
-				if( viewerOn ){
+				//if( viewerOn ){
 					$( "body, html" ).css( "overflow", "auto" );
 					$( "body, html" ).css( "height", "auto" );
 					$( ".img-container" ).slideToggle( "slow" );
 					$( "div.img-desc" ).scrollTop( 0 );
-				}
+				//}
 			}, // hide image
 			
-			viewerToggle: function( len ){
+			viewerToggle: function(){
 				var obj = this;
 				var id = this.getIdName();
 				
 				$( "#" + id + "-thumb" ).unbind( "click" ).click(function(){
-					obj.display( false, len );
+					obj.display();
 				});
 				
 				$( "#bg-overlay" ).unbind( "click" ).click(function(){
-					obj.hide( true );
+					obj.hide();
 				});
+
 				$( ".exit-viewer" ).unbind( "click" ).click(function(){
-					obj.hide( true );
+					obj.hide();
 				});
 			} // toggle image viewer
 		}
@@ -569,9 +578,8 @@ $( document ).ready(function() {
 				
 				for( var i = 0; i < len; i++ ){
 					list[i].preload();
-					list[i].setIndex( i );
 					list[i].hoverToggle();
-					list[i].viewerToggle( len );
+					list[i].viewerToggle();
 				}
 			}
 		}
@@ -584,7 +592,10 @@ $( document ).ready(function() {
 	imgGallery.addImg( galleryPic( "<em>Legend of Zelda</em>-Inspired Card", "card" ) ); // Zelda card, 0
 	imgGallery.addImg( galleryPic( "<em>Adventure Time</em> Lich Poster", "lich" ) ); // Lich poster, 1
 	imgGallery.addImg( galleryPic( "Scarf Girl Illustration", "scarf" ) ); // Scarf girl illustration, 2
-	imgGallery.addImg( galleryPic( "Bookish Girl Illustration", "book" ) );
+	imgGallery.addImg( galleryPic( "Bookish Girl Illustration", "book" ) ); // 3
+	imgGallery.addImg( galleryPic( "A Special Gift", "christmas" ) ); // 4
+	imgGallery.addImg( galleryPic( "Food GIFs", "food-gifs" ) ); // 5
+	imgGallery.addImg( galleryPic( "Day 31", "day31" ) ); // 6
 	
 	imgGallery.initialize();
 });
