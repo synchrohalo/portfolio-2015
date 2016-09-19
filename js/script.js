@@ -337,7 +337,7 @@ $( document ).ready(function() {
 				// else show titles immediately
 				else{
 					$( ".thumb-overlay" ).css( "visibility", "hidden");
-					$( ".mobile-overlay" ).show();
+					//$( ".mobile-overlay" ).show();
 				}
 			}, // hovering over thumbnails
 			
