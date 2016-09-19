@@ -569,7 +569,7 @@ a:hover{
 
 /* img that is currently being viewed */
 #current-img{
-	height:80%;
+	max-height:80%;
 	position:absolute;
 	top:50%;
 	left:50%;
