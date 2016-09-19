@@ -496,8 +496,10 @@ $( document ).ready(function() {
 					$( ".img-desc p" ).css( "width", "50%" );
 				}
 				else{
-					$( ".img-container" ).css( "height", "100%" );
+					$( ".img-container" ).css( "height", "80%" );
 					$( ".img-desc" ).css( "overflow", "scroll" );
+					/*$( ".img-desc" ).css( "padding-top", "2em" );
+					$( ".img-desc" ).css( "padding-bottom", "2em" );*/
 					$( ".img-desc" ).css( "overflow-x", "hidden" );
 					$( ".desc-text" ).css( "margin-top", "1em" );
 					$( ".exit-viewer" ).css( "height", "0.9em" );
@@ -526,6 +528,7 @@ $( document ).ready(function() {
 				var id = this.getIdName();
 				
 				$( "#bg-overlay" ).hide();
+                $( ".img-desc" ).scrollTop( 0 );
 				$( ".img-desc" ).hide();
 				
 				// hide viewer if not already off
@@ -533,7 +536,6 @@ $( document ).ready(function() {
 					$( "body, html" ).css( "overflow", "auto" );
 					$( "body, html" ).css( "height", "auto" );
 					$( ".img-container" ).slideToggle( "slow" );
-					$( "div.img-desc" ).scrollTop( 0 );
 				//}
 			}, // hide image
 			
