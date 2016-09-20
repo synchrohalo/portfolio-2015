@@ -477,6 +477,7 @@ $( document ).ready(function() {
 				var src = this.getSrc();
 				//var index = this.getIndex();
 				
+                $( ".img-desc" ).css( "overflow", "hidden" );
 				$( "#" + id + "-desc" ).show();
 				$( "#current-img" ).attr( "src", src );
 
@@ -496,12 +497,13 @@ $( document ).ready(function() {
 					$( ".img-desc p" ).css( "width", "50%" );
 				}
 				else{
-					$( ".img-container" ).css( "height", "80%" );
-					$( ".img-desc" ).css( "overflow", "scroll" );
 					/*$( ".img-desc" ).css( "padding-top", "2em" );
 					$( ".img-desc" ).css( "padding-bottom", "2em" );*/
+					$( ".img-container" ).css( "height", "80%" );
+					$( ".img-desc" ).css( "overflow", "scroll" );
 					$( ".img-desc" ).css( "overflow-x", "hidden" );
 					$( ".desc-text" ).css( "margin-top", "1em" );
+					$( ".desc-text" ).css( "width", "70%" );
 					$( ".exit-viewer" ).css( "height", "0.9em" );
 					$( ".exit-viewer" ).css( "width", "0.9em" );
 					//$( ".exit-viewer" ).css( "line-height", "0.75em" );
