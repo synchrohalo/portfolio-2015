@@ -516,7 +516,12 @@ $( document ).ready(function() {
 				//if( !viewerOn ){
 					$( "#bg-overlay" ).show().fadeIn( "slow", function(){
 						$( ".img-container" ).slideToggle( "slow" );
-						$( "html, body" ).animate({ scrollTop: $(document).height() }, "fast", function() {							
+                        /*$( "body, html" ).css( "overflow", "hidden" );
+                        $( "#bg-overlay" ).on( "touchmove", function(e){ 
+                             //prevent native touch activity like scrolling
+                             e.preventDefault(); 
+                        });*/
+						$( "html, body" ).animate({ scrollTop: $(document).scrollTop() }, "fast", function() {							
 							$( "body, html" ).css( "overflow", "hidden" );
 							$( "#bg-overlay" ).on( "touchmove", function(e){ 
 								 //prevent native touch activity like scrolling
