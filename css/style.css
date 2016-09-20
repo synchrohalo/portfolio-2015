@@ -621,13 +621,13 @@ a:hover{
 .exit-viewer{
 	position:absolute;
 	top:5%;
-	right:1%;
-	height:1em;
-	width:1em;
+	right:2%;
+	height:1.25em;
+	width:1.25em;
 	color:#000;
 	font-size:2em;
 	font-weight:bold;
-	line-height:0.9em;
+	line-height:1.1em;
 	letter-spacing:0;
 	background-color:#fff;
 	z-index:7;
