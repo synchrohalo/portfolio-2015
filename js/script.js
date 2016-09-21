@@ -491,10 +491,10 @@ $( document ).ready(function() {
 				}*/
 				
 				$( ".img-desc" ).scrollTop( 0 );
-				
+				//$( ".img-desc" ).css( "overflow", "scroll" );
 				
 				if( !isMobile() ){
-					$( ".img-desc p" ).css( "width", "50%" );
+					$( ".img-desc p" ).css( "width", "70%" );
 				}
 				else{
 					/*$( ".img-desc" ).css( "padding-top", "2em" );
