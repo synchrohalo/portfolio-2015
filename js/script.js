@@ -494,7 +494,7 @@ $( document ).ready(function() {
 				//$( ".img-desc" ).css( "overflow", "scroll" );
 				
 				if( !isMobile() ){
-					$( ".img-desc p" ).css( "width", "70%" );
+					$( ".img-desc p" ).css( "width", "60%" );
 				}
 				else{
 					/*$( ".img-desc" ).css( "padding-top", "2em" );
