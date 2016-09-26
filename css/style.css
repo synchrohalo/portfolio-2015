@@ -645,6 +645,10 @@ a:hover{
 /* separate styling for portrait view on touch devices */
 @media screen and (orientation:portrait){
 	
+    .banner{
+        background-size:150%;
+    }
+    
 	#short-description{
 		width:80%;
 		margin-top:-1.75em;
